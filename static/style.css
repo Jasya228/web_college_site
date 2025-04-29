@@ -399,6 +399,9 @@ nav ul li a:hover {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
+.majors-list {
+    animation: none; /* Отключаем CSS-анимацию */
+}
 
 .majors-list .major-card .specialty-btn {
     background: var(--bs-danger); /* Теперь фиолетовый */
