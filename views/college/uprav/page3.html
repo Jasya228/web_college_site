@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/static/header/styles.css" />
     <title>Администрация колледжа</title>
     <style>
-        .hierarchy-section {
+           .hierarchy-section {
             padding: 2rem 1rem;
         }
         .section-title {
@@ -104,24 +104,14 @@
         .admin-hidden.show {
             display: block;
         }
-        .branch-line {
-            border-left: 3px dashed #0ea5e9;
-            padding-left: 2.5rem;
-            position: relative;
-        }
-        .branch-line::before {
-            content: '';
-            position: absolute;
-            left: -1.25rem;
-            top: 0;
-            width: 1.25rem;
-            height: 100%;
-            background: linear-gradient(to bottom, rgba(14, 165, 233, 0.5), transparent);
+        .deputies-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
         }
         @media (max-width: 768px) {
-            .branch-line {
-                padding-left: 1.5rem;
-            }
             .admin-card {
                 max-width: 100%;
                 padding: 1rem;
@@ -132,6 +122,11 @@
             }
             .section-title {
                 font-size: 1.75rem;
+            }
+            .deputies-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
             }
         }
     </style>
@@ -519,105 +514,106 @@
 
     <section class="hierarchy-section max-w-5xl mx-auto p-4">
         <h2 class="section-title text-2xl font-semibold text-cyan-200 mb-6">Иерархия управления</h2>
-        <ul class="space-y-12">
-            <!-- Директор -->
-            <li class="admin-card">
-                <img src="https://picsum.photos/150/150?random=1" alt="Директор" class="admin-avatar">
+        
+        <!-- Директор (центрирован) -->
+        <div class="admin-card">
+            <img src="https://picsum.photos/150/150?random=1" alt="Директор" class="admin-avatar">
+            <div class="admin-info">
+                <h3 class="admin-title">Директор</h3>
+                <p class="admin-text">ФИО: [Укажите имя директора]</p>
+                <p class="admin-text">Контакты: [Укажите email/телефон]</p>
+                <button class="admin-btn" data-target="director-info">Подробнее</button>
+                <div id="director-info" class="admin-hidden">
+                    Руководит образовательной и административной деятельностью колледжа, обеспечивая высокое качество подготовки специалистов.
+                </div>
+            </div>
+        </div>
+
+        <!-- Заместители (в ряд под директором) -->
+        <div class="deputies-container">
+            <div class="admin-card">
+                <img src="https://picsum.photos/150/150?random=2" alt="Заместитель по учебной работе" class="admin-avatar">
                 <div class="admin-info">
-                    <h3 class="admin-title">Директор</h3>
-                    <p class="admin-text">ФИО: [Укажите имя директора]</p>
+                    <h3 class="admin-title">Заместитель директора по учебной работе</h3>
+                    <p class="admin-text">ФИО: [Укажите имя]</p>
                     <p class="admin-text">Контакты: [Укажите email/телефон]</p>
-                    <button class="admin-btn" data-target="director-info">Подробнее</button>
-                    <div id="director-info" class="admin-hidden">
-                        Руководит образовательной и административной деятельностью колледжа, обеспечивая высокое качество подготовки специалистов.
+                    <button class="admin-btn" data-target="deputy-academic-info">Подробнее</button>
+                    <div id="deputy-academic-info" class="admin-hidden">
+                        Отвечает за организацию учебного процесса и внедрение современных образовательных стандартов.
                     </div>
                 </div>
-            </li>
+            </div>
+            
+            <div class="admin-card">
+                <img src="https://picsum.photos/150/150?random=3" alt="Заместитель по воспитательной работе" class="admin-avatar">
+                <div class="admin-info">
+                    <h3 class="admin-title">Заместитель директора по воспитательной работе</h3>
+                    <p class="admin-text">ФИО: Маржан Сабыркызы Мәлікова</p>
+                    <p class="admin-text">Контакты: gaipov_6325@mail.ru</p>
+                    <button class="admin-btn" data-target="deputy-educational-info">Подробнее</button>
+                    <div id="deputy-educational-info" class="admin-hidden">
+                        Координирует воспитательные программы, организует мероприятия и публикует статьи по IT в образовании. Награждена за вклад в воспитательную работу.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="deputies-container">
+            <div class="admin-card">
+                <img src="https://picsum.photos/150/150?random=4" alt="Заместитель по учебно-производственной работе" class="admin-avatar">
+                <div class="admin-info">
+                    <h3 class="admin-title">Заместитель директора по учебно-производственной работе</h3>
+                    <p class="admin-text">ФИО: Маржан Сабыркызы Мәлікова (с 2018 года)</p>
+                    <p class="admin-text">Контакты: gaipov_6325@mail.ru</p>
+                    <button class="admin-btn" data-target="deputy-production-info">Подробнее</button>
+                    <div id="deputy-production-info" class="admin-hidden">
+                        Руководит производственной практикой студентов, обеспечивая их готовность к профессиональной деятельности.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="admin-card">
+                <img src="https://picsum.photos/150/150?random=5" alt="Заместитель по административно-хозяйственной части" class="admin-avatar">
+                <div class="admin-info">
+                    <h3 class="admin-title">Заместитель директора по административно-хозяйственной части</h3>
+                    <p class="admin-text">ФИО: [Укажите имя]</p>
+                    <p class="admin-text">Контакты: [Укажите email/телефон]</p>
+                    <button class="admin-btn" data-target="deputy-admin-info">Подробнее</button>
+                    <div id="deputy-admin-info" class="admin-hidden">
+                        Обеспечивает функционирование инфраструктуры колледжа и комфортные условия для обучения.
+                    </div>
+                </div>
+            </div>
+        </div>
 
-            <!-- Заместители -->
-            <li class="branch-line pl-8 space-y-8">
-                <ul class="space-y-8">
-                    <li class="admin-card">
-                        <img src="https://picsum.photos/150/150?random=2" alt="Заместитель по учебной работе" class="admin-avatar">
-                        <div class="admin-info">
-                            <h3 class="admin-title">Заместитель директора по учебной работе</h3>
-                            <p class="admin-text">ФИО: [Укажите имя]</p>
-                            <p class="admin-text">Контакты: [Укажите email/телефон]</p>
-                            <button class="admin-btn" data-target="deputy-academic-info">Подробнее</button>
-                            <div id="deputy-academic-info" class="admin-hidden">
-                                Отвечает за организацию учебного процесса и внедрение современных образовательных стандартов.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="admin-card">
-                        <img src="https://picsum.photos/150/150?random=3" alt="Заместитель по воспитательной работе" class="admin-avatar">
-                        <div class="admin-info">
-                            <h3 class="admin-title">Заместитель директора по воспитательной работе</h3>
-                            <p class="admin-text">ФИО: Маржан Сабыркызы Мәлікова</p>
-                            <p class="admin-text">Контакты: gaipov_6325@mail.ru</p>
-                            <button class="admin-btn" data-target="deputy-educational-info">Подробнее</button>
-                            <div id="deputy-educational-info" class="admin-hidden">
-                                Координирует воспитательные программы, организует мероприятия и публикует статьи по IT в образовании. Награждена за вклад в воспитательную работу.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="admin-card">
-                        <img src="https://picsum.photos/150/150?random=4" alt="Заместитель по учебно-производственной работе" class="admin-avatar">
-                        <div class="admin-info">
-                            <h3 class="admin-title">Заместитель директора по учебно-производственной работе</h3>
-                            <p class="admin-text">ФИО: Маржан Сабыркызы Мәлікова (с 2018 года)</p>
-                            <p class="admin-text">Контакты: gaipov_6325@mail.ru</p>
-                            <button class="admin-btn" data-target="deputy-production-info">Подробнее</button>
-                            <div id="deputy-production-info" class="admin-hidden">
-                                Руководит производственной практикой студентов, обеспечивая их готовность к профессиональной деятельности.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="admin-card">
-                        <img src="https://picsum.photos/150/150?random=5" alt="Заместитель по административно-хозяйственной части" class="admin-avatar">
-                        <div class="admin-info">
-                            <h3 class="admin-title">Заместитель директора по административно-хозяйственной части</h3>
-                            <p class="admin-text">ФИО: [Укажите имя]</p>
-                            <p class="admin-text">Контакты: [Укажите email/телефон]</p>
-                            <button class="admin-btn" data-target="deputy-admin-info">Подробнее</button>
-                            <div id="deputy-admin-info" class="admin-hidden">
-                                Обеспечивает функционирование инфраструктуры колледжа и комфортные условия для обучения.
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </li>
-
-            <!-- Другие сотрудники -->
-            <li class="branch-line pl-16 space-y-8">
-                <ul class="space-y-8">
-                    <li class="admin-card">
-                        <img src="https://picsum.photos/150/150?random=6" alt="Руководитель отдела кадров" class="admin-avatar">
-                        <div class="admin-info">
-                            <h3 class="admin-title">Руководитель отдела кадров</h3>
-                            <p class="admin-text">ФИО: [Укажите имя]</p>
-                            <p class="admin-text">Контакты: [Укажите email/телефон]</p>
-                            <button class="admin-btn" data-target="hr-info">Подробнее</button>
-                            <div id="hr-info" class="admin-hidden">
-                                Отвечает за подбор персонала, ведение документации и управление кадровыми процессами.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="admin-card">
-                        <img src="https://picsum.photos/150/150?random=7" alt="Главный бухгалтер" class="admin-avatar">
-                        <div class="admin-info">
-                            <h3 class="admin-title">Главный бухгалтер</h3>
-                            <p class="admin-text">ФИО: [Укажите имя]</p>
-                            <p class="admin-text">Контакты: [Укажите email/телефон]</p>
-                            <button class="admin-btn" data-target="accountant-info">Подробнее</button>
-                            <div id="accountant-info" class="admin-hidden">
-                                Управляет финансовой деятельностью колледжа, обеспечивая точность и прозрачность учета.
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </li>
-        </ul>
+        <!-- Другие сотрудники -->
+        <div class="deputies-container">
+            <div class="admin-card">
+                <img src="https://picsum.photos/150/150?random=6" alt="Руководитель отдела кадров" class="admin-avatar">
+                <div class="admin-info">
+                    <h3 class="admin-title">Руководитель отдела кадров</h3>
+                    <p class="admin-text">ФИО: [Укажите имя]</p>
+                    <p class="admin-text">Контакты: [Укажите email/телефон]</p>
+                    <button class="admin-btn" data-target="hr-info">Подробнее</button>
+                    <div id="hr-info" class="admin-hidden">
+                        Отвечает за подбор персонала, ведение документации и управление кадровыми процессами.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="admin-card">
+                <img src="https://picsum.photos/150/150?random=7" alt="Главный бухгалтер" class="admin-avatar">
+                <div class="admin-info">
+                    <h3 class="admin-title">Главный бухгалтер</h3>
+                    <p class="admin-text">ФИО: [Укажите имя]</p>
+                    <p class="admin-text">Контакты: [Укажите email/телефон]</p>
+                    <button class="admin-btn" data-target="accountant-info">Подробнее</button>
+                    <div id="accountant-info" class="admin-hidden">
+                        Управляет финансовой деятельностью колледжа, обеспечивая точность и прозрачность учета.
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <script>
