@@ -154,7 +154,7 @@
     }
 
     .feature-card {
-        background-color: rgba(255, 255, 255, 0.8);
+        background-color: rgba(219, 209, 209, 0.315);
         padding: 20px;
         border-radius: 10px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -333,6 +333,52 @@
     height: auto;
   }
 }
+  /* Мобильная адаптация */
+  @media (max-width: 768px) {
+        .hero-content h2 {
+            font-size: 1.5rem;
+        }
+        
+        .about-icons {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .features {
+            grid-template-columns: 1fr;
+        }
+        
+        .slider-track img {
+            width: 100%;
+            height: auto;
+        }
+        
+        .requirements-list li {
+            font-size: 0.9rem;
+        }
+        
+        .video-btn {
+            padding: 8px 16px;
+            font-size: 0.9rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .hero-content {
+            padding: 20px;
+        }
+        
+        .about-text p {
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+        
+        .slide-btn {
+            width: 30px;
+            height: 30px;
+            font-size: 1rem;
+        }
+    }
   </style>
 </head>
 <body>
@@ -753,19 +799,19 @@ style="background: none; border: none; padding: 0; cursor: pointer;">
   </nav>
   <section class="hero-section">
     <div class="hero-content">
-      <h2>Общежитие для студентов</h2>
-      <a href="#" class="video-btn">Видео об общежитии</a>
+      <h2 data-translate="dorm_title">Общежитие для студентов</h2>
+      <a href="#" class="video-btn" data-translate="dorm_video">Видео об общежитии</a>
     </div>
   </section>
-
+  
   <section class="about-dorm">
-    <h3>О нашем общежитии</h3>
+    <h3 data-translate="about_dorm_title">О нашем общежитии</h3>
     <div class="about-text">
-      <p>Общежитие Алматинского политехнического колледжа представляет собой комфортное и удобное место для проживания студентов, обучающихся в этом учебном заведении. Оно расположено в непосредственной близости от учебных корпусов, что позволяет студентам легко добираться до учебных помещений и принимать участие в различных мероприятиях колледжа.</p>
-      <p>Общежитие оборудовано всем необходимым для комфортного проживания студентов. В номерах есть удобные кровати, шкафы для одежды, столы для учебы и другие необходимые предметы мебели. Для удобства студентов предусмотрены общие кухни, где можно готовить пищу, а также санузлы и душевые комнаты, обеспечивающие комфорт и чистоту.</p>
-      <p>В общежитии создаются условия для того, чтобы студенты могли не только учиться, но и отдыхать. Здесь проводятся культурные и развлекательные мероприятия, организуются досуговые зоны, где студенты могут общаться и проводить время в компании сверстников.</p>
-      <p>Кроме того, общежитие обеспечивает безопасность студентов. Вход в здание контролируется охраной, а также установлены системы видеонаблюдения, что позволяет создать безопасную атмосферу для проживания.</p>
-      <p>В целом, общежитие Алматинского политехнического колледжа является отличным местом для проживания студентов, обеспечивая комфорт, безопасность и возможность активно участвовать в жизни колледжа.</p>
+      <p data-translate="about_dorm_p1">Общежитие Алматинского политехнического колледжа представляет собой комфортное и удобное место для проживания студентов...</p>
+      <p data-translate="about_dorm_p2">Общежитие оборудовано всем необходимым для комфортного проживания студентов...</p>
+      <p data-translate="about_dorm_p3">В общежитии создаются условия для того, чтобы студенты могли не только учиться, но и отдыхать...</p>
+      <p data-translate="about_dorm_p4">Кроме того, общежитие обеспечивает безопасность студентов...</p>
+      <p data-translate="about_dorm_p5">В целом, общежитие Алматинского политехнического колледжа является отличным местом для проживания студентов...</p>
     </div>
     <div class="about-icons">
       <img src="/static/images/stud/com.jpg" alt="Комфорт" title="Удобные комнаты">
@@ -773,105 +819,106 @@ style="background: none; border: none; padding: 0; cursor: pointer;">
       <img src="/static/images/stud/wi.jpg" alt="Wi-Fi" title="Бесплатный Wi-Fi">
     </div>
   </section>
-
+  
   <section class="dormitory-features">
     <div class="container">
-        <h2>Условия проживания в общежитии</h2>
-        <div class="features">
-            <div class="feature-card">
-                <i class="fas fa-wifi"></i>
-                <h3>Бесплатный Wi-Fi</h3>
-                <p>Всегда быстрый и стабильный интернет для учебы и связи с близкими.</p>
-            </div>
-
-            <div class="feature-card">
-                <i class="fas fa-dumbbell"></i>
-                <h3>Спортивные тренажеры</h3>
-                <p>Поддержите форму в спортивном зале с тренажерами и кардионагрузками.</p>
-            </div>
-
-            <div class="feature-card">
-                <i class="fas fa-bed"></i>
-                <h3>Комфортное размещение</h3>
-                <p>Обеспечены комфортные условия для отдыха и учебы.</p>
-            </div>
-
-            <div class="feature-card">
-                <i class="fas fa-user-graduate"></i>
-                <h3>Только для студентов</h3>
-                <p>В общежитии проживают исключительно студенты колледжа.</p>
-            </div>
-
-            <div class="feature-card">
-                <i class="fas fa-map-marker-alt"></i>
-                <h3>Удобное расположение</h3>
-                <p>Общежитие находится рядом с учебными корпусами колледжа.</p>
-            </div>
-
-            <div class="feature-card">
-                <i class="fas fa-shield-alt"></i>
-                <h3>Охрана 24/7</h3>
-                <p>Территория общежития находится под круглосуточной охраной.</p>
-            </div>
-
-            <div class="feature-card">
-                <i class="fas fa-dumbbell"></i>
-                <h3>Спортзал</h3>
-                <p>Для студентов доступен современный спортзал с разнообразными тренажерами.</p>
-            </div>
-
-            <div class="feature-card">
-                <i class="fas fa-utensils"></i>
-                <h3>Общая кухня</h3>
-                <p>Удобные кухни для самостоятельного приготовления пищи.</p>
-            </div>
+      <h2 data-translate="dorm_features_title">Условия проживания в общежитии</h2>
+      <div class="features">
+  
+        <div class="feature-card">
+          <i class="fas fa-wifi"></i>
+          <h3 data-translate="feature_wifi_title">Бесплатный Wi-Fi</h3>
+          <p data-translate="feature_wifi_text">Всегда быстрый и стабильный интернет для учебы и связи с близкими.</p>
         </div>
-    </div>
-</section>
-<section class="slider-gallery">
-  <div class="container">
-    <h2>Фотогалерея общежития</h2>
-    <div class="slider-wrapper">
-      <button class="slide-btn prev" onclick="scrollSlider(-1)">
-        &#10094;
-      </button>
-      <div class="slider-track" id="sliderTrack">
-        <!-- Фото с 2.jpg до 16.jpg -->
-        <img src="/static/images/stud/2.jpg" alt="Фото 2">
-        <img src="/static/images/stud/3.jpg" alt="Фото 3">
-        <img src="/static/images/stud/4.jpg" alt="Фото 4">
-        <img src="/static/images/stud/5.jpg" alt="Фото 5">
-        <img src="/static/images/stud/6.jpg" alt="Фото 6">
-        <img src="/static/images/stud/7.jpg" alt="Фото 7">
-        <img src="/static/images/stud/8.jpg" alt="Фото 8">
-        <img src="/static/images/stud/9.jpg" alt="Фото 9">
-        <img src="/static/images/stud/10.jpg" alt="Фото 10">
-        <img src="/static/images/stud/11.jpg" alt="Фото 11">
-        <img src="/static/images/stud/12.jpg" alt="Фото 12">
-        <img src="/static/images/stud/13.jpg" alt="Фото 13">
-        <img src="/static/images/stud/14.jpg" alt="Фото 14">
-        <img src="/static/images/stud/15.jpg" alt="Фото 15">
-        <img src="/static/images/stud/16.jpg" alt="Фото 16">
+  
+        <div class="feature-card">
+          <i class="fas fa-dumbbell"></i>
+          <h3 data-translate="feature_gym_title">Спортивные тренажеры</h3>
+          <p data-translate="feature_gym_text">Поддержите форму в спортивном зале с тренажерами и кардионагрузками.</p>
+        </div>
+  
+        <div class="feature-card">
+          <i class="fas fa-bed"></i>
+          <h3 data-translate="feature_comfort_title">Комфортное размещение</h3>
+          <p data-translate="feature_comfort_text">Обеспечены комфортные условия для отдыха и учебы.</p>
+        </div>
+  
+        <div class="feature-card">
+          <i class="fas fa-user-graduate"></i>
+          <h3 data-translate="feature_students_title">Только для студентов</h3>
+          <p data-translate="feature_students_text">В общежитии проживают исключительно студенты колледжа.</p>
+        </div>
+  
+        <div class="feature-card">
+          <i class="fas fa-map-marker-alt"></i>
+          <h3 data-translate="feature_location_title">Удобное расположение</h3>
+          <p data-translate="feature_location_text">Общежитие находится рядом с учебными корпусами колледжа.</p>
+        </div>
+  
+        <div class="feature-card">
+          <i class="fas fa-shield-alt"></i>
+          <h3 data-translate="feature_security_title">Охрана 24/7</h3>
+          <p data-translate="feature_security_text">Территория общежития находится под круглосуточной охраной.</p>
+        </div>
+  
+        <div class="feature-card">
+          <i class="fas fa-dumbbell"></i>
+          <h3 data-translate="feature_fitness_title">Спортзал</h3>
+          <p data-translate="feature_fitness_text">Для студентов доступен современный спортзал с разнообразными тренажерами.</p>
+        </div>
+  
+        <div class="feature-card">
+          <i class="fas fa-utensils"></i>
+          <h3 data-translate="feature_kitchen_title">Общая кухня</h3>
+          <p data-translate="feature_kitchen_text">Удобные кухни для самостоятельного приготовления пищи.</p>
+        </div>
+  
       </div>
-      <button class="slide-btn next" onclick="scrollSlider(1)">
-        &#10095;
-      </button>
     </div>
-  </div>
-</section>
-<section class="dormitory-requirements">
-  <div class="container">
-    <h2>Что нужно для заселения в общежитие</h2>
-    <ul class="requirements-list">
-      <li><i class="fas fa-id-card"></i> Удостоверение личности (оригинал и копия)</li>
-      <li><i class="fas fa-file-signature"></i> Заявление на поселение</li>
-      <li><i class="fas fa-notes-medical"></i> Медицинская справка формы № 075-У</li>
-      <li><i class="fas fa-images"></i> 2 фотографии 3x4</li>
-      <li><i class="fas fa-money-check-alt"></i> Квитанция об оплате</li>
-      <li><i class="fas fa-user-shield"></i> Согласие от родителей (для несовершеннолетних)</li>
-    </ul>
-  </div>
-</section>
+  </section>
+  
+  <section class="slider-gallery">
+    <div class="container">
+      <h2 data-translate="gallery_title">Фотогалерея общежития</h2>
+      <div class="slider-wrapper">
+        <button class="slide-btn prev" onclick="scrollSlider(-1)">&#10094;</button>
+        <div class="slider-track" id="sliderTrack">
+          <!-- Фото с 2.jpg до 16.jpg -->
+          <img src="/static/images/stud/2.jpg" alt="Фото 2">
+          <img src="/static/images/stud/3.jpg" alt="Фото 3">
+          <img src="/static/images/stud/4.jpg" alt="Фото 4">
+          <img src="/static/images/stud/5.jpg" alt="Фото 5">
+          <img src="/static/images/stud/6.jpg" alt="Фото 6">
+          <img src="/static/images/stud/7.jpg" alt="Фото 7">
+          <img src="/static/images/stud/8.jpg" alt="Фото 8">
+          <img src="/static/images/stud/9.jpg" alt="Фото 9">
+          <img src="/static/images/stud/10.jpg" alt="Фото 10">
+          <img src="/static/images/stud/11.jpg" alt="Фото 11">
+          <img src="/static/images/stud/12.jpg" alt="Фото 12">
+          <img src="/static/images/stud/13.jpg" alt="Фото 13">
+          <img src="/static/images/stud/14.jpg" alt="Фото 14">
+          <img src="/static/images/stud/15.jpg" alt="Фото 15">
+          <img src="/static/images/stud/16.jpg" alt="Фото 16">
+        </div>
+        <button class="slide-btn next" onclick="scrollSlider(1)">&#10095;</button>
+      </div>
+    </div>
+  </section>
+  
+  <section class="dormitory-requirements">
+    <div class="container">
+      <h2 data-translate="requirements_title">Что нужно для заселения в общежитие</h2>
+      <ul class="requirements-list">
+        <li data-translate="requirement_id"><i class="fas fa-id-card"></i> Удостоверение личности (оригинал и копия)</li>
+        <li data-translate="requirement_application"><i class="fas fa-file-signature"></i> Заявление на поселение</li>
+        <li data-translate="requirement_medical"><i class="fas fa-notes-medical"></i> Медицинская справка формы № 075-У</li>
+        <li data-translate="requirement_photos"><i class="fas fa-images"></i> 2 фотографии 3x4</li>
+        <li data-translate="requirement_payment"><i class="fas fa-money-check-alt"></i> Квитанция об оплате</li>
+        <li data-translate="requirement_consent"><i class="fas fa-user-shield"></i> Согласие от родителей (для несовершеннолетних)</li>
+      </ul>
+    </div>
+  </section>
+  
 <script>
   function scrollSlider(direction) {
     const track = document.getElementById('sliderTrack');
