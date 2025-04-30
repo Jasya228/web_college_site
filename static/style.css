@@ -423,7 +423,7 @@ nav ul li a:hover {
     
 }
 
-
+/* 
 @media (max-width: 768px) {
     .majors-list .major-card {
         flex: 0 0 250px;
@@ -434,7 +434,7 @@ nav ul li a:hover {
     .majors-list .major-card {
         flex: 0 0 200px;
     }
-}
+} */
 
 /* Модальное окно специальностей */
 .specialtyPopup {
@@ -1098,9 +1098,9 @@ nav ul li a:hover {
         padding: 15px 20px;
         font-size: 16px;
     }
-    .major-card p {
+    /* .major-card p {
         font-size: 14px;
-    }
+    } */
     .partners-slider {
         overflow: hidden;
     }
@@ -1135,3 +1135,150 @@ nav ul li a:hover {
         display: none; /* Скрываем элемент на мобильных устройствах */
     }
 }
+/* ========== MOBILE ADAPTATION (<=480px) ========== */
+@media (max-width: 480px) {
+    /* Упрощаем header/Nav */
+    header {
+      padding: 10px;
+      height: auto;
+    }
+    .logo {
+      max-width: 120px;
+      margin: 0 auto;
+      display: block;
+    }
+    nav ul {
+      display: none;
+    }
+    .burger {
+      display: flex;
+    }
+  
+    /* Герой */
+    .hero {
+      margin-top: 40px;
+      padding: 10px;
+    }
+    .hero h1 {
+      font-size: 24px;
+      line-height: 1.2;
+      text-shadow: 0 0 8px #00bfff;
+    }
+    .hero p {
+      font-size: 14px;
+    }
+  
+    /* Кнопки */
+    .buttons {
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 80px;
+      padding: 0 10px;
+    }
+    .buttons button {
+      width: 100%;
+      padding: 12px 0;
+      font-size: 16px;
+    }
+  
+    /* Список специальностей — делаем вертикальный скролл */
+    /* .majors-container {
+      overflow: visible;
+    }
+    .majors-list {
+      flex-direction: column;
+      gap: 15px;
+      animation: none;
+      width: 100%;
+    }
+    .major-card {
+      flex: none;
+      width: 100%;
+    }
+   */
+    /* Новости */
+    .news {
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+    .news p {
+      font-size: 14px;
+    }
+    .news img {
+      max-height: 180px;
+    }
+  
+    /* Партнёры — горизонтальный скролл */
+    .partners-track {
+      gap: 20px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .partner-card {
+      flex: 0 0 120px;
+      margin-right: 10px;
+    }
+  
+    /* Карта */
+    .map-container {
+      height: 250px;
+    }
+    .map-container iframe {
+      height: 100%;
+    }
+  
+    /* Футер */
+    .footer-container {
+      flex-direction: column;
+      gap: 20px;
+      padding: 0 10px;
+    }
+    .footer-section {
+      width: 100%;
+    }
+  }
+  
+  /* ========== EXTRA SMALL (<=360px) ========== */
+  @media (max-width: 360px) {
+    .hero h1 {
+      font-size: 20px;
+    }
+    .hero p,
+    .news p,
+    .footer-section p,
+    .footer-section a {
+      font-size: 12px;
+    }
+    .buttons button {
+      font-size: 14px;
+      padding: 10px 0;
+    }
+  }
+  @media (max-width: 480px) {
+    /* Контейнер — включаем только горизонтальный скролл */
+    .majors-container {
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      padding: 0 10px; /* чтобы карточки не упирались вплотную в края */
+    }
+  
+    /* Сама лента — flex по строке, без анимации */
+    .majors-list {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 15px;
+      animation: none;      /* отключаем marquee */
+      width: auto;          /* ширина по содержимому */
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
+  
+    /* Карточки фиксированной ширины, чтобы было удобно скроллить */
+    .majors-list .major-card {
+      flex: 0 0 auto;
+      width: 200px;         /* или подкорректируй под свой дизайн */
+      margin: 0;
+      transform: none;      /* отключаем любые hover-трансформации, если надо */
+    }
+  }
