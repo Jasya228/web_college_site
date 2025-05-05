@@ -195,9 +195,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Возобновление анимации при уходе курсора
-    majorsList.addEventListener('mouseleave', () => {
-        animate();
-    });
+  
 
     // Модальное окно
     const specialtyPopup = document.getElementById('specialtyPopup');
