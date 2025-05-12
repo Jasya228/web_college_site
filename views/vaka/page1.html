@@ -162,6 +162,13 @@
       display: inline-flex;
       align-items: center;
     }
+	.tag.expiring_date::before {
+    content: "🕰️ ";
+    font-size: 1rem;
+    color: var(--text-light);
+    margin-right: 5px;
+}
+
 
     .tag.experience::before {
       content: "⏳";
@@ -328,8 +335,8 @@
 							<div class="dropdown-item">
 								<a href="#" class="dropdown-link" data-translate="planning">ПЛАНИРОВАНИЕ</a>
 								<div class="sub-dropdown-menu">
-									<a href="/views/college/plan/page2.html" class="sub-dropdown-link" data-translate="strategy">Стратегический план</a>
-									<a href="/views/college/plan/page1.html" class="sub-dropdown-link" data-translate="monitoring">План работы внутриколледжного контроля</a>
+									<a href="/views/college/plan/page1.html" class="sub-dropdown-link" data-translate="strategy">Стратегический план</a>
+									<a href="/views/college/plan/page2.html" class="sub-dropdown-link" data-translate="monitoring">План работы внутриколледжного контроля</a>
 								</div>
 							</div>
 							<div class="dropdown-item">
@@ -533,8 +540,8 @@
 					<div class="dropdown-item">
 						<a href="#" class="dropdown-link" data-translate="planning">ПЛАНИРОВАНИЕ</a>
 						<div class="sub-dropdown-menu">
-							<a href="/views/college/plan/page2.html" class="dropdown-link" data-translate="strategy">Стратегический план</a>
-							<a href="/views/college/plan/page1.html" class="dropdown-link" data-translate="monitoring">План работы внутриколледжного контроля</a>
+							<a href="/views/college/plan/page1.html" class="dropdown-link" data-translate="strategy">Стратегический план</a>
+							<a href="/views/college/plan/page2.html" class="dropdown-link" data-translate="monitoring">План работы внутриколледжного контроля</a>
 						</div>
 					</div>
 					<div class="dropdown-item">
@@ -734,6 +741,7 @@
             <div class="tags">
               <div class="tag experience">${vacancy.experience}</div>
               <div class="tag schedule">${vacancy.schedule}</div>
+			   <div class="tag expiring_date">${vacancy.expiring_date}</div>
             </div>
             <div class="address">${vacancy.address}</div>
             <a class="btn" href="https://wa.me/77071710800?text=Здравствуйте! Я хочу откликнуться на вакансию '${encodeURIComponent(vacancy.title)}'">
