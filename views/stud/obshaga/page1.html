@@ -5,23 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Общежитие для студентов</title>
   <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
-<!-- Google Fonts link for Poppins -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet"> 
-
-<!-- Font Awesome link for icons -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 <link rel="icon" href="/static/images/header/icon_site_logo.svg" type="image/x-icon">
-
-
 <link rel="stylesheet" href="/static/style.css">
 <link rel="stylesheet" href="/static/online_assistant.css">
 <link rel="stylesheet" href="/static/tour_frame_style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
-
-<!-- Подключение библиотеки particles.js -->
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <link rel="stylesheet" href="/static/header/styles.css">
 
@@ -321,12 +312,163 @@
 .slider-track::-webkit-scrollbar {
   display: none;
 }
+.stats-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 120px;
+    text-align: center;
+}
+
+/* Стиль для числа */
+.stat-item .number {
+    font-size: 40px;
+    color: #0056b3;
+    font-weight: bold;
+}
+
+/* Стиль для описания */
+.stat-item .description {
+    font-size: 16px;
+    color: #ffffff;
+    margin-top: auto; /* Перемещает описание вниз */
+}
 
 .slider-track {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+.regulations-section {
+				background-color: #00000000;
+				color: #fff;
+				padding: 30px 20px;
+				font-family: 'Segoe UI', sans-serif;
+				display: flex;
+				justify-content: center;
+			}
 
+			.content-wrapper {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				max-width: 1000px; /* было 800px */
+				width: 100%;
+			}
+
+			.regulations-section h1 {
+				font-size: 1.8em;
+				font-weight: bold;
+				text-align: center;
+				color: #a6d8ff;
+				text-shadow: 2px 2px 8px #33ccff;
+				margin-bottom: 30px;
+			}
+
+			.accordion {
+				width: 100%;
+			}
+
+			.accordion-item {
+				background-color: #1b1b1b;
+				border-radius: 8px;
+				margin-bottom: 15px;
+				overflow: hidden;
+				box-shadow: 0 0 10px rgba(0, 145, 255, 0.15);
+			}
+
+			.accordion-header {
+				padding: 20px 24px;
+				cursor: pointer;
+				position: relative;
+				font-size: 18px;
+				font-weight: 600;
+				color: #9fdfff;
+				background-color: #1f1f1f;
+				transition: background-color 0.3s;
+			}
+
+			.accordion-header:hover {
+				background-color: #22222200;
+			}
+
+			.accordion-header::after {
+				content: '▼';
+				position: absolute;
+				right: 20px;
+				transition: transform 0.3s;
+			}
+
+			.accordion-header.active::after {
+				transform: rotate(180deg);
+			}
+
+			.accordion-content {
+				max-height: 0;
+				overflow: hidden;
+				background-color: #12121200;
+				padding: 0 20px;
+				transition: max-height 0.3s ease;
+			}
+
+			.accordion-content p {
+				margin: 15px 0 10px;
+				font-size: 14px;
+				color: #cdeeff;
+			}
+
+			.download-btn {
+				display: inline-flex;
+				align-items: center;
+				background-color: #33ccff;
+				color: #000;
+				padding: 10px 15px;
+				margin: 10px 0 20px;
+				border: none;
+				border-radius: 6px;
+				text-decoration: none;
+				font-weight: bold;
+				transition: background-color 0.3s;
+				font-size: 14px;
+			}
+
+			.download-btn:hover {
+				background-color: #00aaff;
+			}
+
+			.download-btn svg {
+				margin-right: 8px;
+				width: 18px;
+				height: 18px;
+				fill: currentColor;
+			}
+
+			/* Адаптивность */
+			@media (max-width: 600px) {
+				.regulations-section h1 {
+					font-size: 1.3em;
+				}
+
+				.accordion-header {
+					font-size: 15px;
+					padding: 14px 16px;
+				}
+
+				.accordion-content p {
+					font-size: 13px;
+				}
+
+				.download-btn {
+					font-size: 13px;
+					padding: 8px 12px;
+				}
+			}
 @media (max-width: 1000px) {
   .slider-track img {
     width: 90%;
@@ -842,12 +984,43 @@ style="background: none; border: none; padding: 0; cursor: pointer;">
   
   <section class="about-dorm">
     <h3 data-translate="about_dorm_title">О нашем общежитии</h3>
-    <div class="about-text">
-      <p data-translate="about_dorm_p1">Общежитие Алматинского политехнического колледжа представляет собой комфортное и удобное место для проживания студентов...</p>
-      <p data-translate="about_dorm_p2">Общежитие оборудовано всем необходимым для комфортного проживания студентов...</p>
-      <p data-translate="about_dorm_p3">В общежитии создаются условия для того, чтобы студенты могли не только учиться, но и отдыхать...</p>
-      <p data-translate="about_dorm_p4">Кроме того, общежитие обеспечивает безопасность студентов...</p>
-      <p data-translate="about_dorm_p5">В целом, общежитие Алматинского политехнического колледжа является отличным местом для проживания студентов...</p>
+    <div class="stats-container">
+      <div class="stat-item">
+        <span class="number" data-translate="dorm_stats_year">1940</span>
+        <span class="description" data-translate="dorm_stats_year_desc">Год открытия</span>
+      </div>
+      <div class="stat-item">
+        <span class="number" data-translate="dorm_stats_area">3020 м<sup>2</sup></span>
+        <span class="description" data-translate="dorm_stats_area_desc">Общая площадь</span>
+      </div>
+      <div class="stat-item">
+        <span class="number" data-translate="dorm_stats_floors">5</span>
+        <span class="description" data-translate="dorm_stats_floors_desc">Этаж</span>
+      </div>
+      <div class="stat-item">
+        <span class="number" data-translate="dorm_stats_rooms">75</span>
+        <span class="description" data-translate="dorm_stats_rooms_desc">Комнат</span>
+      </div>
+      <div class="stat-item">
+        <span class="number" data-translate="dorm_stats_seats">170</span>
+        <span class="description" data-translate="dorm_stats_seats_desc">Мест</span>
+      </div>
+      <div class="stat-item">
+        <span class="number" data-translate="dorm_stats_cinema">1</span>
+        <span class="description" data-translate="dorm_stats_cinema_desc">Кино зал</span>
+      </div>
+      <div class="stat-item">
+        <span class="number" data-translate="dorm_stats_computer">1</span>
+        <span class="description" data-translate="dorm_stats_computer_desc">Компьютерный зал</span>
+      </div>
+      <div class="stat-item">
+        <span class="number" data-translate="dorm_stats_coworking">1</span>
+        <span class="description" data-translate="dorm_stats_coworking_desc">Коворкинг</span>
+      </div>
+      <div class="stat-item">
+        <span class="number" data-translate="dorm_stats_tennis">1</span>
+        <span class="description" data-translate="dorm_stats_tennis_desc">Теннис зал</span>
+      </div>
     </div>
     <div class="about-icons">
       <img src="/static/images/stud/com.jpg" alt="Комфорт" title="Удобные комнаты">
@@ -864,51 +1037,52 @@ style="background: none; border: none; padding: 0; cursor: pointer;">
         <div class="feature-card">
           <i class="fas fa-wifi"></i>
           <h3 data-translate="feature_wifi_title">Бесплатный Wi-Fi</h3>
-          <p data-translate="feature_wifi_text">Всегда быстрый и стабильный интернет для учебы и связи с близкими.</p>
+         
         </div>
   
         <div class="feature-card">
-          <i class="fas fa-dumbbell"></i>
+          <i class="fas fa-soap"></i>
           <h3 data-translate="feature_gym_title">Спортивные тренажеры</h3>
-          <p data-translate="feature_gym_text">Поддержите форму в спортивном зале с тренажерами и кардионагрузками.</p>
+        
         </div>
   
         <div class="feature-card">
-          <i class="fas fa-bed"></i>
-          <h3 data-translate="feature_comfort_title">Комфортное размещение</h3>
-          <p data-translate="feature_comfort_text">Обеспечены комфортные условия для отдыха и учебы.</p>
+          <i class="fas fa-shower"></i>
+
+          <h3 data-translate="feature_comfort_title">Душевые кабины</h3>
+   
         </div>
   
         <div class="feature-card">
           <i class="fas fa-user-graduate"></i>
           <h3 data-translate="feature_students_title">Только для студентов</h3>
-          <p data-translate="feature_students_text">В общежитии проживают исключительно студенты колледжа.</p>
+         
         </div>
   
         <div class="feature-card">
           <i class="fas fa-map-marker-alt"></i>
           <h3 data-translate="feature_location_title">Удобное расположение</h3>
-          <p data-translate="feature_location_text">Общежитие находится рядом с учебными корпусами колледжа.</p>
+        
         </div>
   
         <div class="feature-card">
           <i class="fas fa-shield-alt"></i>
-          <h3 data-translate="feature_security_title">Охрана 24/7</h3>
-          <p data-translate="feature_security_text">Территория общежития находится под круглосуточной охраной.</p>
+          <h3 data-translate="feature_security_title">Face id и видеонаблюдение</h3>
+       
         </div>
   
         <div class="feature-card">
           <i class="fas fa-dumbbell"></i>
-          <h3 data-translate="feature_fitness_title">Спортзал</h3>
-          <p data-translate="feature_fitness_text">Для студентов доступен современный спортзал с разнообразными тренажерами.</p>
+          <h3 data-translate="feature_fitness_title">Коворкинг</h3>
+     
         </div>
   
         <div class="feature-card">
           <i class="fas fa-utensils"></i>
           <h3 data-translate="feature_kitchen_title">Общая кухня</h3>
-          <p data-translate="feature_kitchen_text">Удобные кухни для самостоятельного приготовления пищи.</p>
+         
         </div>
-  
+
       </div>
     </div>
   </section>
@@ -929,31 +1103,76 @@ style="background: none; border: none; padding: 0; cursor: pointer;">
           <img src="/static/images/stud/8.jpg" alt="Фото 8">
           <img src="/static/images/stud/9.jpg" alt="Фото 9">
           <img src="/static/images/stud/10.jpg" alt="Фото 10">
-          <img src="/static/images/stud/11.jpg" alt="Фото 11">
-          <img src="/static/images/stud/12.jpg" alt="Фото 12">
-          <img src="/static/images/stud/13.jpg" alt="Фото 13">
-          <img src="/static/images/stud/14.jpg" alt="Фото 14">
-          <img src="/static/images/stud/15.jpg" alt="Фото 15">
-          <img src="/static/images/stud/16.jpg" alt="Фото 16">
+          <img src="/static/images/stud/19.JPG" alt="Фото 11">
+          <img src="/static/images/stud/18.JPG" alt="Фото 12">
+          <img src="/static/images/stud/20.JPG" alt="Фото 13">
+          <img src="/static/images/stud/21.JPG" alt="Фото 14">
+          <img src="/static/images/stud/22.JPG" alt="Фото 15">
+          <img src="/static/images/stud/23.JPG" alt="Фото 16">
         </div>
         <button class="slide-btn next" onclick="scrollSlider(1)">&#10095;</button>
       </div>
     </div>
   </section>
   
-  <section class="dormitory-requirements">
-    <div class="container">
-      <h2 data-translate="requirements_title">Что нужно для заселения в общежитие</h2>
-      <ul class="requirements-list">
-        <li data-translate="requirement_id"><i class="fas fa-id-card"></i> Удостоверение личности (оригинал и копия)</li>
-        <li data-translate="requirement_application"><i class="fas fa-file-signature"></i> Заявление на поселение</li>
-        <li data-translate="requirement_medical"><i class="fas fa-notes-medical"></i> Медицинская справка формы № 075-У</li>
-        <li data-translate="requirement_photos"><i class="fas fa-images"></i> 2 фотографии 3x4</li>
-        <li data-translate="requirement_payment"><i class="fas fa-money-check-alt"></i> Квитанция об оплате</li>
-        <li data-translate="requirement_consent"><i class="fas fa-user-shield"></i> Согласие от родителей (для несовершеннолетних)</li>
-      </ul>
-    </div>
-  </section>
+  	<!-- Секция "Положения колледжа" -->
+		<div class="regulations-section">
+			<div class="content-wrapper">
+				<h1 data-translate="stud_rule_title">Жатақхана құжаттары</h1>
+
+				<div class="accordion">
+					<!-- Элемент аккордеона 1 -->
+				
+					<!-- Элемент аккордеона 3 -->
+					<div class="accordion-item">
+						<div class="accordion-header" data-translate="stud_rules1">
+							Студенттер үйінің ішкі тәртіп ережесі
+						</div>
+						<div class="accordion-content">
+							<a class="download-btn" target="_blank" href="https://disk.yandex.kz/i/m0N76NiIFA9srg" download>
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+									<path
+										d="M5 20h14v-2H5v2zm7-18L5.33 11h3.67v4h6v-4h3.67L12 2z"
+									/>
+								</svg>
+								<span data-translate="download_pdf">Скачать PDF</span>
+							</a>
+						</div>
+					</div>
+          <div class="accordion-item">
+						<div class="accordion-header" data-translate="stud_rules2">
+							Қажетті құжаттар тізімі
+						</div>
+						<div class="accordion-content">
+							<a class="download-btn" target="_blank"  href="https://disk.yandex.kz/i/m0N76NiIFA9srg" download>
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+									<path
+										d="M5 20h14v-2H5v2zm7-18L5.33 11h3.67v4h6v-4h3.67L12 2z"
+									/>
+								</svg>
+								<span data-translate="download_pdf">Скачать PDF</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- JS для аккордеона -->
+		<script>
+			const headers = document.querySelectorAll('.accordion-header')
+			headers.forEach(header => {
+				header.addEventListener('click', () => {
+					const content = header.nextElementSibling
+					header.classList.toggle('active')
+					if (content.style.maxHeight) {
+						content.style.maxHeight = null
+					} else {
+						content.style.maxHeight = content.scrollHeight + 'px'
+					}
+				})
+			})
+		</script>
   
 <script>
   function scrollSlider(direction) {
