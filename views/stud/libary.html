@@ -250,13 +250,59 @@
     <div id="particle-background"></div>
 
     <div id="header-placeholder"></div>
-    <script>
-        fetch('/views/header.html')
-            .then(response => response.text())
+
+<script>
+    fetch('/views/header.html')
+        .then(response => response.text())
+        .then(data => {
+            const headerPlaceholder = document.getElementById('header-placeholder');
+            headerPlaceholder.innerHTML = data;
+
+            // Инициализация динамических элементов после вставки хедера
+            initDateTime();
+            initIPAddress();
+            initLanguageSwitcher();
+        });
+
+    function initDateTime() {
+        const dateElement = document.getElementById('current-date');
+        const timeElement = document.getElementById('current-time');
+        
+        function updateTime() {
+            const now = new Date();
+            const optionsDate = { year: 'numeric', month: 'long', day: 'numeric' };
+            const optionsTime = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
+            dateElement.textContent = now.toLocaleDateString('ru-RU', optionsDate).toUpperCase();
+            timeElement.textContent = now.toLocaleTimeString('ru-RU', optionsTime);
+        }
+
+        setInterval(updateTime, 1000);
+        updateTime();
+    }
+
+    function initIPAddress() {
+        fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
             .then(data => {
-                document.getElementById('header-placeholder').innerHTML = data;
+                document.getElementById('ip-address').textContent = data.ip;
+            })
+            .catch(() => {
+                document.getElementById('ip-address').textContent = 'Не удалось загрузить IP';
             });
-    </script>
+    }
+
+    function initLanguageSwitcher() {
+        const languageSelect = document.getElementById('language-select');
+        if (languageSelect) {
+            languageSelect.addEventListener('change', (event) => {
+                const selectedLanguage = event.target.value;
+                console.log('Selected language:', selectedLanguage);
+                // Добавь логику для смены языка
+            });
+        }
+    }
+</script>
+
 
    
 

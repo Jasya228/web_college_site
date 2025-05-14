@@ -616,47 +616,54 @@
 				
 					<!-- Элемент аккордеона 3 -->
 					<div class="accordion-item">
-  <div class="accordion-header" data-translate="atestat_2024">
-    Қабылдау ережелері 2024-2025
+  <div class="accordion-header" data-translate="schedule_2024">
+    Расписание 2024-2025
   </div>
   <div class="accordion-content">
 
-    <!-- Расписание 2024-2025 -->
+    <!-- 1-семестр -->
     <div class="sub-accordion">
-      <div class="sub-header">Расписание 2024-2025</div>
+      <div class="sub-header">1-семестр</div>
       <div class="sub-content">
-
-        <!-- 1-семестр -->
+        
         <div class="inner-accordion">
-          <div class="inner-header">1-семестр</div>
+          <div class="inner-header">Расписание</div>
           <div class="inner-content">
-
-            <p>Расписание</p>
-            <a class="download-btn" href="https://your-link-1.com" target="_blank">
-              Скачать PDF
-            </a>
-
-            <p style="margin-top: 10px;">Факультатив</p>
-            <a class="download-btn" href="https://your-link-2.com" target="_blank">
-              Скачать PDF
-            </a>
+            <a class="download-btn" href="https://docs.google.com/spreadsheets/d/1IV5bYJsFpdMBwWcQ861Yy4nxGoZ7jiC9/edit?usp=sharing&ouid=115478018777160564082&rtpof=true&sd=true" target="_blank">
+				Скачать расписание 1 и 3 курсов в PDF</a><br></br>
+			<a class="download-btn" href="https://docs.google.com/spreadsheets/d/1VKaJXxSlwh6tS3q0wvZxNnBSwmew46Y8/edit?usp=sharing&ouid=115478018777160564082&rtpof=true&sd=true" target="_blank">
+				Скачать расписание 2 и 4 курсов в PDF</a>
           </div>
         </div>
 
-        <!-- 2-семестр -->
         <div class="inner-accordion">
-          <div class="inner-header">2-семестр</div>
+          <div class="inner-header">Факультатив</div>
           <div class="inner-content">
+             <a class="download-btn" href="https://docs.google.com/spreadsheets/d/1ISLao6iG3ByrD72xnGsWKEbLE_bsg7Zl/edit?usp=sharing&ouid=115478018777160564082&rtpof=true&sd=true" target="_blank">
+				Скачать расписание 1 и 3 курсов в PDF</a><br></br>
+			<a class="download-btn" href="https://docs.google.com/spreadsheets/d/1edsiurf-Rw-qU-duujDzqXcAoswht2jQ/edit?usp=sharing&ouid=115478018777160564082&rtpof=true&sd=true" target="_blank">
+				Скачать расписание 2 и 4 курсов в PDF</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
-            <p>Расписание</p>
-            <a class="download-btn" href="https://your-link-3.com" target="_blank">
-              Скачать PDF
-            </a>
+    <!-- 2-семестр -->
+    <div class="sub-accordion">
+      <div class="sub-header">2-семестр</div>
+      <div class="sub-content">
+        
+        <div class="inner-accordion">
+          <div class="inner-header">Расписание</div>
+          <div class="inner-content">
+            <a class="download-btn" href="https://your-link-3.com" target="_blank">Скачать PDF</a>
+          </div>
+        </div>
 
-            <p style="margin-top: 10px;">Факультатив</p>
-            <a class="download-btn" href="https://your-link-4.com" target="_blank">
-              Скачать PDF
-            </a>
+        <div class="inner-accordion">
+          <div class="inner-header">Факультатив</div>
+          <div class="inner-content">
+            <a class="download-btn" href="https://your-link-4.com" target="_blank">Скачать PDF</a>
           </div>
         </div>
 
@@ -667,10 +674,13 @@
 </div>
 
 <style>
+  /* Основные стили для страницы */
   body {
     background-color: #1c1c1c;
     color: #f0f0f0;
     font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
   }
 
   .accordion-item {
@@ -691,9 +701,11 @@
   }
 
   .accordion-content {
-    display: none;
+    display: block; /* Главный блок сразу открыт */
     padding: 15px 20px;
     background-color: #1e1e1e;
+    overflow-y: auto; /* Вертикальная прокрутка */
+    max-height: 600px; /* Ограничиваем высоту */
   }
 
   .sub-header, .inner-header {
@@ -717,6 +729,7 @@
     background-color: #262626;
     margin-top: 5px;
     border-left: 2px solid #00ffff55;
+    word-wrap: break-word; /* Разрыв длинных строк */
   }
 
   .download-btn {
@@ -735,20 +748,20 @@
     background: #00e6e6;
     transform: scale(1.05);
   }
+
+  /* Добавляем стили для фрейма, чтобы он не выходил за пределы */
+  iframe {
+    width: 100%;
+    height: 600px;
+    border: none;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
 </style>
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    const accordionHeader = document.querySelector('.accordion-header');
-    const accordionContent = document.querySelector('.accordion-content');
-
-    // По клику сворачиваем или раскрываем
-    accordionHeader.addEventListener('click', () => {
-      const isVisible = accordionContent.style.display === 'block';
-      accordionContent.style.display = isVisible ? 'none' : 'block';
-    });
-
-    // Вложенные секции
+    // Вложенные аккордеоны
     document.querySelectorAll('.sub-header, .inner-header').forEach(header => {
       header.addEventListener('click', () => {
         const content = header.nextElementSibling;
@@ -756,29 +769,25 @@
       });
     });
   });
+  
+  const headers = document.querySelectorAll('.accordion-header')
+  headers.forEach(header => {
+    header.addEventListener('click', () => {
+      const content = header.nextElementSibling
+      header.classList.toggle('active')
+      if (content.style.maxHeight) {
+        content.style.maxHeight = null
+      } else {
+        content.style.maxHeight = content.scrollHeight + 'px'
+      }
+    })
+  })
 </script>
-
 
 
 				</div>
 			</div>
 		</div>
-
-		<!-- JS для аккордеона -->
-		<script>
-			const headers = document.querySelectorAll('.accordion-header')
-			headers.forEach(header => {
-				header.addEventListener('click', () => {
-					const content = header.nextElementSibling
-					header.classList.toggle('active')
-					if (content.style.maxHeight) {
-						content.style.maxHeight = null
-					} else {
-						content.style.maxHeight = content.scrollHeight + 'px'
-					}
-				})
-			})
-		</script>
 
 		<script src="/static/translations.js"></script>
 		<script src="/static/languageSwitcher.js"></script>

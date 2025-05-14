@@ -151,12 +151,59 @@
 <div id="header-placeholder"></div>
 
 <script>
-  fetch('/views/header.html')  // относительный путь
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('header-placeholder').innerHTML = data;
-    });
+    fetch('/views/header.html')
+        .then(response => response.text())
+        .then(data => {
+            const headerPlaceholder = document.getElementById('header-placeholder');
+            headerPlaceholder.innerHTML = data;
+
+            // Инициализация динамических элементов после вставки хедера
+            initDateTime();
+            initIPAddress();
+            initLanguageSwitcher();
+        });
+
+    function initDateTime() {
+        const dateElement = document.getElementById('current-date');
+        const timeElement = document.getElementById('current-time');
+        
+        function updateTime() {
+            const now = new Date();
+            const optionsDate = { year: 'numeric', month: 'long', day: 'numeric' };
+            const optionsTime = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
+            dateElement.textContent = now.toLocaleDateString('ru-RU', optionsDate).toUpperCase();
+            timeElement.textContent = now.toLocaleTimeString('ru-RU', optionsTime);
+        }
+
+        setInterval(updateTime, 1000);
+        updateTime();
+    }
+
+    function initIPAddress() {
+        fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('ip-address').textContent = data.ip;
+            })
+            .catch(() => {
+                document.getElementById('ip-address').textContent = 'Не удалось загрузить IP';
+            });
+    }
+
+    function initLanguageSwitcher() {
+        const languageSelect = document.getElementById('language-select');
+        if (languageSelect) {
+            languageSelect.addEventListener('change', (event) => {
+                const selectedLanguage = event.target.value;
+                console.log('Selected language:', selectedLanguage);
+                // Добавь логику для смены языка
+            });
+        }
+    }
 </script>
+
+
+
         <div class="overlay"></div>
       
         <nav class="mobile-menu">
@@ -396,18 +443,18 @@
               </svg>
               <span data-translate="S06120102">4S06120102 Техник сетевого и системного администрирования</span>
             </a>
-            
+
           </div>
         </div>
   
         <div class="accordion-item">
           <div class="accordion-header" data-translate="educational_program_3_title">06120200 Системы информационной безопасности</div>
           <div class="accordion-content">
-             <a class="download-btn" target="_blank" href="https://disk.yandex.kz/d/uJnhbWNK1SHBoA" download>
+             <a class="download-btn" target="_blank" href="https://disk.yandex.kz/d/OfVMP5r--GtbOA" download>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <path d="M5 20h14v-2H5v2zm7-18L5.33 11h3.67v4h6v-4h3.67L12 2z"/>
               </svg>
-              <span data-translate="S06120102">4S06120102 Техник сетевого и системного администрирования</span>
+              <span data-translate="S06120102">4S06120202 Техник по информационной безопасности</span>
             </a>
           </div>
         </div>
@@ -415,11 +462,18 @@
         <div class="accordion-item">
           <div class="accordion-header" data-translate="educational_program_4_title">6130100 Программное обеспечение (по видам)</div>
           <div class="accordion-content">
-             <a class="download-btn" href="docs/program_3_file.pdf" download>
+             <a class="download-btn" target="_blank" href="https://disk.yandex.kz/d/2pXDgT3Nn4fv8w" download>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <path d="M5 20h14v-2H5v2zm7-18L5.33 11h3.67v4h6v-4h3.67L12 2z"/>
               </svg>
-              <span data-translate="download_pdf">Скачать PDF</span>
+              <span data-translate="S06130103">4S06130103 Бағдарламалық қамтамасыздандыруды құрастырушысы</span>
+            </a>
+
+            <a class="download-btn" target="_blank" href="https://disk.yandex.kz/d/pHu8fwEvKkK_tg" download>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M5 20h14v-2H5v2zm7-18L5.33 11h3.67v4h6v-4h3.67L12 2z"/>
+              </svg>
+              <span data-translate="S06130105">4S06130105 Ақпараттық жүйелер технигі</span>
             </a>
           </div>
         </div>
@@ -427,11 +481,11 @@
         <div class="accordion-item">
           <div class="accordion-header" data-translate="educational_program_5_title">07151100 Эксплуатация и техническое обслуживание машин и оборудования</div>
           <div class="accordion-content">
-             <a class="download-btn" href="docs/program_3_file.pdf" download>
+             <a class="download-btn" target="_blank" href="https://disk.yandex.kz/d/JUK7X4hP6fLy9g" download>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <path d="M5 20h14v-2H5v2zm7-18L5.33 11h3.67v4h6v-4h3.67L12 2z"/>
               </svg>
-              <span data-translate="download_pdf">Скачать PDF</span>
+              <span data-translate="B07151100">07151100 Эксплуатация и техническое обслуживание машин и оборудования (по отраслям промышленности)</span>
             </a>
           </div>
         </div>
