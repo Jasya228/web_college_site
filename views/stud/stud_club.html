@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/images/header/icon_site_logo.svg" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <title>Студенческие клубы</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(145deg, #0d1b2a, #1b263b);
+            min-height: 100vh;
+            /* display: flex; */
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        #particles-js {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: calc(100vh - высота_хедера); /* замените "высота_хедера" на реальную высоту */
+    padding-top: высота_хедера; /* чтобы контент не накладывался на хедер */
+    width: 100%;
+}
+        .club-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            padding: 20px;
+            margin: 20px;
+             /* display: flex; */
+        }
+
+        .club-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 25px;
+            border-radius: 20px;
+            text-align: center;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            color: #e0e0e0;
+            cursor: pointer;
+        }
+
+        .club-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 255, 255, 0.4);
+        }
+
+        .club-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin-bottom: 15px;
+        }
+
+        .club-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: #00eaff;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .club-card p {
+            font-size: 0.95em;
+            color: #b0bec5;
+            margin: 8px 0;
+        }
+
+        .club-card a {
+            color: #00ffcc;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .club-card a:hover {
+            color: #ff4081;
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <script>
+        fetch('/views/header.html')
+            .then(response => response.text())
+            .then(data => {
+                const headerPlaceholder = document.getElementById('header-placeholder');
+                headerPlaceholder.innerHTML = data;
+    
+                // Инициализация динамических элементов после вставки хедера
+                initDateTime();
+                initIPAddress();
+                initLanguageSwitcher();
+            });
+    
+        function initDateTime() {
+            const dateElement = document.getElementById('current-date');
+            const timeElement = document.getElementById('current-time');
+            
+            function updateTime() {
+                const now = new Date();
+                const optionsDate = { year: 'numeric', month: 'long', day: 'numeric' };
+                const optionsTime = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
+                dateElement.textContent = now.toLocaleDateString('ru-RU', optionsDate).toUpperCase();
+                timeElement.textContent = now.toLocaleTimeString('ru-RU', optionsTime);
+            }
+    
+            setInterval(updateTime, 1000);
+            updateTime();
+        }
+    
+        function initIPAddress() {
+            fetch('https://api.ipify.org?format=json')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('ip-address').textContent = data.ip;
+                })
+                .catch(() => {
+                    document.getElementById('ip-address').textContent = 'Не удалось загрузить IP';
+                });
+        }
+    
+        function initLanguageSwitcher() {
+            const languageSelect = document.getElementById('language-select');
+            if (languageSelect) {
+                languageSelect.addEventListener('change', (event) => {
+                    const selectedLanguage = event.target.value;
+                    console.log('Selected language:', selectedLanguage);
+                    // Добавь логику для смены языка
+                });
+            }
+        }
+    </script>
+<div class="content-wrapper">
+    <div id="particles-js"></div>
+    <div class="club-grid">
+        <div class="club-card">
+            <img src="/static/images/Logo_club/l1.png" alt="Комитет молодежных организаций">
+            <h3>Комитет молодежных организаций</h3>
+            <p>Руководитель: Жанбаева Айдаш</p>
+        </div>
+        <div class="club-card">
+            <img src="/static/images/Logo_club/l2.png" alt="Дебат клуб «Shyn»">
+            <h3>Дебат клуб «Shyn»</h3>
+            <p>Руководитель: Бек Нурсултан</p>
+            
+        </div>
+        <div class="club-card">
+            <img src="/static/images/Logo_club/l3.png" alt="Благотворительный клуб «Qamqor»">
+            <h3>Благотворительный клуб «Qamqor»</h3>
+            <p>Маратов Айым</p>
+        </div>
+        <div class="club-card">
+            <img src="/static/images/Logo_club/l4.png" alt="Танцевальный клуб «Kerbez»">
+            <h3>Танцевальный клуб «Kerbez»</h3>
+            <p>Бекман Нурай</p>
+            
+        </div>
+        <div class="club-card">
+            <img src="/static/images/Logo_club/l5.png" alt="Юридический клуб «Oqdusmen»">
+            <h3>Юридический клуб «Oqdusmen»</h3>
+            <p>Айтжан Нурсаул</p>
+        </div>
+        <div class="club-card">
+            <img src="/static/images/Logo_club/l6.png" alt="Спортивный клуб">
+            <h3>Спортивный клуб</h3>
+            <p>Жаркен Куратын</p>
+        </div>
+        <div class="club-card">
+            <img src="/static/images/Logo_club/l7.png" alt="Студенческий совет">
+            <h3>Студенческий совет</h3>
+            <p>Сарсенгалиева Арайлымирыза</p>
+        </div>
+        <div class="club-card">
+            <img src="/static/images/Logo_club/l8.png" alt="Арт-центр">
+            <h3>Арт-центр</h3>
+            <p>Курманали Динара</p>
+        </div>
+        <div class="club-card">
+            <img src="/static/images/Logo_club/l9.png" alt="Медиа центр">
+            <h3>Медиа центр</h3>
+            <p>Лайляжан Мирза</p>
+        </div>
+        <div class="club-card">
+            <img src="/static/images/Logo_club/l10.png" alt="Медиа центр">
+            <h3>Медиа центр</h3>
+            <p>Лайляжан Мирза</p>
+        </div>
+    </div>
+</div>
+    <script>
+        // Initialize particles.js for cosmic background effect
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: '#00eaff' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.5, random: true },
+                size: { value: 3, random: true },
+                line_linked: { enable: true, distance: 150, color: '#00eaff', opacity: 0.3, width: 1 },
+                move: { enable: true, speed: 2, direction: 'none', random: false, straight: false, out_mode: 'out', bounce: false }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' }, resize: true },
+                modes: { repulse: { distance: 100, duration: 0.4 }, push: { particles_nb: 4 } }
+            },
+            retina_detect: true
+        });
+    </script>
+      <script src="/static/translations.js"></script>
+      <script src="/static/languageSwitcher.js"></script>
+      <script src="/static/virtualTour.js"></script>
+      <script src="/static/online_assistant.js"></script>
+      <script src="/static/script.js"></script>
+      <script src="/static/major-body.js"></script>
+      <script src="/static/partners-scroll.js"></script>
+      <script src="/static/header/main.js"></script>
+      <script src="/static/modal-page/js/specialtyPopup.js"></script>
+      <div id="footer-placeholder"></div>
+      
+      <script>
+          fetch('/views/footer.html')
+              .then(response => response.text())
+              .then(data => {
+                  document.getElementById('footer-placeholder').innerHTML = data;
+              });
+      </script>
+</body>
+</html>
