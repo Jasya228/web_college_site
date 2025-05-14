@@ -52,9 +52,9 @@
         }
 
         .club-card {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgb(255, 255, 255);
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            border: 1px solid rgb(0, 0, 0);
             padding: 25px;
             border-radius: 20px;
             text-align: center;
@@ -77,7 +77,7 @@
 
         .club-card h3 {
             font-family: 'Orbitron', sans-serif;
-            color: #00eaff;
+            color: #ff0000;
             font-size: 1.3em;
             margin-bottom: 10px;
             letter-spacing: 2px;
@@ -86,7 +86,7 @@
 
         .club-card p {
             font-size: 0.95em;
-            color: #b0bec5;
+            color: #000000;
             margin: 8px 0;
         }
 
@@ -100,6 +100,23 @@
         .club-card a:hover {
             color: #ff4081;
         }
+
+        .club-logo {
+    width: 150px;
+    height: 150px;
+    object-fit: cover; /* обрежет изображение по размеру */
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+.club-logo {
+    transition: transform 0.3s ease;
+}
+
+.club-card:hover .club-logo {
+    transform: scale(1.1);
+}
+
+
     </style>
 </head>
 <body>
@@ -155,61 +172,65 @@
                 });
             }
         }
+        
     </script>
 <div class="content-wrapper">
     <div id="particles-js"></div>
     <div class="club-grid">
         <div class="club-card">
-            <img src="/static/images/Logo_club/l1.png" alt="Комитет молодежных организаций">
-            <h3>Комитет молодежных организаций</h3>
-            <p>Руководитель: Жанбаева Айдаш</p>
+            <img class="club-logo" src="/static/images/Logo_club/l1.png" alt="Комитет молодежных организаций">
+            <h3>ЖІК «POLYTECH JASTARY» ҰЙЫМЫ</h3>
+            <p>ЖІК «POLYTECH JASTARY» ұйымы - ұйымы талантты, жалынды жастардың басын біріктіріп, шығармашылығын дамытуға көмек көрсетеді.</p>
         </div>
-        <div class="club-card">
-            <img src="/static/images/Logo_club/l2.png" alt="Дебат клуб «Shyn»">
-            <h3>Дебат клуб «Shyn»</h3>
-            <p>Руководитель: Бек Нурсултан</p>
+        <div  class="club-card">
+            <img class="club-logo" src="/static/images/Logo_club/l2.png" alt="Дебат клуб «Shyn»">
+            <h3>«POLYTECH ZIATKERLERI» ИПК клубы</h3>
+            <p>«POLYTECH ZIATKERLERI» интеллектуалды пікірсайыс клубы  - бұл толеранттылықты, шешендік шеберлікті, сыни ойлауды және жастардың көшбасшылық қасиеттерін дамытуды жүзеге асыратын студенттердің ерікті бірлестігі.</p>
             
         </div>
         <div class="club-card">
-            <img src="/static/images/Logo_club/l3.png" alt="Благотворительный клуб «Qamqor»">
-            <h3>Благотворительный клуб «Qamqor»</h3>
-            <p>Маратов Айым</p>
+            <img class="club-logo" src="/static/images/Logo_club/l3.png" alt="Благотворительный клуб «Qamqor»">
+            <h3>«POLYTECH ERIKTILERI» еріктілері клубы</h3>
+            <p>«POLYTECH ERIKTILERI» – колледж студенттерін қоғамдық өмірге белсенді араластыру, еріктілік мәдениетін қалыптастыру және әлеуметтік маңызды жобаларға атсалысу арқылы жауапкершілік пен жанашырлық қасиеттерін дамыту.</p>
         </div>
         <div class="club-card">
-            <img src="/static/images/Logo_club/l4.png" alt="Танцевальный клуб «Kerbez»">
-            <h3>Танцевальный клуб «Kerbez»</h3>
-            <p>Бекман Нурай</p>
+            <img class="club-logo" src="/static/images/Logo_club/l4.png" alt="Танцевальный клуб «Kerbez»">
+            <h3>«СТУДЕНТТІК КЕҢЕС»</h3>
+            <p>Студенттер үйіндегі «Студенттік кеңес» –  студенттердің бос уақытын ұйымдастыру және жаңа бастамаларына қолдау көрсетіп, өзекті сұрақтарды шешу бойынша бастамашыл өзін-өзі басқару ұйымы.</p>
             
         </div>
         <div class="club-card">
-            <img src="/static/images/Logo_club/l5.png" alt="Юридический клуб «Oqdusmen»">
-            <h3>Юридический клуб «Oqdusmen»</h3>
-            <p>Айтжан Нурсаул</p>
+            <img class="club-logo" src="/static/images/Logo_club/l5.png" alt="Юридический клуб «Oqdusmen»">
+            <h3>«KIROSHI»</h3>
+            <p>«KIROSHI» робототехника зертханасы студенттердің инженерлік және техникалық дағдыларын дамытып, инновациялық технологиялар саласындағы әлеуетін ашуға мүмкіндік беретін ынталы әрі талантты студенттерді біріктіреді.</p>
         </div>
         <div class="club-card">
-            <img src="/static/images/Logo_club/l6.png" alt="Спортивный клуб">
-            <h3>Спортивный клуб</h3>
-            <p>Жаркен Куратын</p>
+            <img class="club-logo" src="/static/images/Logo_club/l6.png" alt="Спортивный клуб">
+            <h3>«ЖАС ҚЫРАН» ӘПК КЛУБЫ</h3>
+            <p>«Жас қыран» әскери-патриоттық клубы – әскери-патриоттық тәрбие беру іс-шараларын өткізуге бағытталған, студенттердің бірлескен іс-әрекеттегі мүдделерінің ортақтығы негізінде құрылған ерікті бірлестік</p>
         </div>
         <div class="club-card">
-            <img src="/static/images/Logo_club/l7.png" alt="Студенческий совет">
-            <h3>Студенческий совет</h3>
-            <p>Сарсенгалиева Арайлымирыза</p>
+            <img class="club-logo" src="/static/images/Logo_club/l7.png" alt="Студенческий совет">
+            <h3>«SANALY URPAQ» ЕПК КЛУБЫ</h3>
+            <p>«Sanaly urpaq» ерікті-патриоттық клубы – колледждегі құқықтық білім, сыбайлас жемқорлыққа қарсы мәдениетті насихаттау үшін құрылған студенттердің ерікті бірлестігі.</p>
         </div>
         <div class="club-card">
-            <img src="/static/images/Logo_club/l8.png" alt="Арт-центр">
-            <h3>Арт-центр</h3>
-            <p>Курманали Динара</p>
+            <img class="club-logo" src="/static/images/Logo_club/l8.png" alt="Арт-центр">
+            <h3>«ҚЫЗ ЕЛДІҢ КӨРКІ» ҚЫЗДАР КЛУБЫ</h3>
+            <p>«Қыз елдің көркі» қыздар клубы - қыз балаларды ұлттық тұрғыда халқымыздың әдет - ғұрпын, салт - дәстүрін қадірлеу, ұлтжанды, отансүйгіштік сезімдерге баулу, тәрбиелеу.</p>
         </div>
         <div class="club-card">
-            <img src="/static/images/Logo_club/l9.png" alt="Медиа центр">
-            <h3>Медиа центр</h3>
-            <p>Лайляжан Мирза</p>
+            <img class="club-logo" src="/static/images/Logo_club/l9.png" alt="Медиа центр">
+            <h3>СПОРТТЫҚ ҮЙІРМЕЛЕР</h3>
+            <p>Студенттердің дене тәрбиесін жетілдіру, салауатты өмір салтын қалыптастыру, спорттық дағдыларын дамыту және бос уақытын тиімді ұйымдастыру. 
+                Спорт үйірмелері: футбол, волейбол, баскетбол, тоғызқұмалақ, шахмат, шашки</p>
         </div>
         <div class="club-card">
-            <img src="/static/images/Logo_club/l10.png" alt="Медиа центр">
-            <h3>Медиа центр</h3>
-            <p>Лайляжан Мирза</p>
+            <img class="club-logo" src="/static/images/Logo_club/l10.png" alt="Медиа центр">
+            <h3>«ТІЛДЕР ӘЛЕМІ»</h3>
+            <p>«Тілдер әлемі» тілдерін үйрету арқылы олардың білім көкжиегін кеңейту, кәсіби және жеке даму мүмкіндіктерін арттыру
+                - 2023-2024 - Ағылшын тілі
+                - ⁠2024-2025 - Түрік тілі</p>
         </div>
     </div>
 </div>

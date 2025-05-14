@@ -480,8 +480,8 @@ it_hub_regulation_title: "IT HUB - Положение",
     head_librarian: "Заведующая библиотекой",
     librarian: "Библиотекарь",
 	schedule_2024: "Расписание 2024-2025",
-	libary: "Библиотека",
-
+	Libary: "Библиотека",
+	pol_jastar: "Молодежный клуб политех",
 
 
 
@@ -973,8 +973,8 @@ it_hub: "IT HUB",
     our_team: "Our Team",
     head_librarian: "Head Librarian",
     librarian: "Librarian",
-	libary: "Library",
-
+	Libary: "Library",
+	pol_jastar: "POLYTECHNIC YOUTHS CLUB",
 
 
 
@@ -1477,6 +1477,7 @@ upd_forms_title: 'Оқу-өндірістік практика формалар�
     our_team: "Біздің команда",
     head_librarian: "Кітапхана меңгерушісі",
     librarian: "Кітапханашы",
-    libary: "Кітапхана",
+    Libary: "Кітапхана",
+	pol_jastar: "Политех жастары",
 	},
 }

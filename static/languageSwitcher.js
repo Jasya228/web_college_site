@@ -1,46 +1,56 @@
-document.addEventListener("DOMContentLoaded", () => {
+function initLanguageSwitcher() {
     const languageSelector = document.getElementById("language-select");
-    const elementsToTranslate = document.querySelectorAll("[data-translate]"); // Элементы для перевода
-    const rulesFrame = document.getElementById("rulesFrame"); // Наш iframe с правилами
+    const elementsToTranslate = document.querySelectorAll("[data-translate]");
+    const rulesFrame = document.getElementById("rulesFrame");
+
+    // Если селектор языка не найден, пропускаем
+    if (!languageSelector) {
+        console.warn("Переключатель языка (#language-select) не найден на странице.");
+        return;
+    }
 
     // Функция смены языка
     const setLanguage = (lang) => {
-        localStorage.setItem("selectedLanguage", lang); // Сохраняем выбранный язык
+        localStorage.setItem("selectedLanguage", lang);
 
-        // Обновляем текст на странице (перевод элементов)
         elementsToTranslate.forEach(element => {
             const key = element.getAttribute("data-translate");
-            element.textContent = translations[lang]?.[key] || `Missing translation: ${key}`; // Если нет перевода, показываем предупреждение
+            element.textContent = translations[lang]?.[key] || `Missing translation: ${key}`;
         });
 
-        // Обновляем содержимое iframe
-        let iframeSrc = "";
-        if (lang === "kz") {
-            iframeSrc = "kk.html";
-        } else if (lang === "ru") {
-            iframeSrc = "ru.html";
-        } else if (lang === "en") {
-            iframeSrc = "en.html"; // Указываем файл для английского языка
-        }
-
-        // Очищаем и перезагружаем iframe
         if (rulesFrame) {
-            rulesFrame.src = ""; // Очищаем текущий src
+            let iframeSrc = "";
+            if (lang === "kz") {
+                iframeSrc = "kk.html";
+            } else if (lang === "ru") {
+                iframeSrc = "ru.html";
+            } else if (lang === "en") {
+                iframeSrc = "en.html";
+            }
+            rulesFrame.src = ""; 
             setTimeout(() => {
-                rulesFrame.src = iframeSrc; // Устанавливаем новый src
-            }, 100); // Задержка, чтобы iframe успел перезагрузиться
+                rulesFrame.src = iframeSrc;
+            }, 100);
         }
     };
 
-    // Загрузка сохранённого языка из localStorage или по умолчанию "kz"
+    // Устанавливаем язык из localStorage или по умолчанию "kz"
     const savedLanguage = localStorage.getItem("selectedLanguage") || "kz";
-    setLanguage(savedLanguage); // Устанавливаем язык на основе сохранённого значения
+    languageSelector.value = savedLanguage;
+    setLanguage(savedLanguage);
 
-    // Устанавливаем значение в селекторе языка и добавляем слушатель для изменения
-    if (languageSelector) {
-        languageSelector.value = savedLanguage;
-        languageSelector.addEventListener("change", (event) => setLanguage(event.target.value));
-    } else {
-        console.warn("Переключатель языка (#language-select) не найден на странице.");
-    }
+    // Добавляем обработчик события для переключения языка
+    languageSelector.addEventListener("change", (event) => setLanguage(event.target.value));
+}
+
+// Инициализируем после подгрузки хедера
+document.addEventListener("DOMContentLoaded", () => {
+    initLanguageSwitcher();
+
+    fetch('/views/header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+            initLanguageSwitcher(); // Повторная инициализация
+        });
 });
