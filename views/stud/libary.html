@@ -4,32 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Алматы Политехникалық Колледжі Кітапханасы - Білім Ғарышы</title>
+    <link rel="icon" href="/static/images/header/icon_site_logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/online_assistant.css">
+    <link rel="stylesheet" href="/static/tour_frame_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <link rel="stylesheet" href="/static/header/styles.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
+        /* Ensure particle background is behind all content */
+        #particle-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
         }
 
-        body {
-            background: linear-gradient(135deg, #0a0a23 0%, #1e1e4a 100%);
-            color: #ffffff;
-            overflow-x: hidden;
+        /* Header Placeholder */
+        #header-placeholder {
+            margin-bottom: 0; /* Remove gap below header */
         }
-
+.header {
+            position: fixed;
+            top: 200px; /* Adjusted to avoid overlap with hero section */
+            left: 0;
+            width: 100%;
+            z-index: 10; /* Ensure header is above all content */
+        }
         /* Hero Section */
         .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            background: url('https://source.unsplash.com/random/1920x1080?nebula') no-repeat center/cover;
-        }
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+   
+    background-size: 100% auto; /* Ширина 100%, высота автоматически */
+    background-position: center -333px; /* Сдвиг вверх */
+    z-index: -1;
+}
+
+
+
 
         .hero::before {
             content: '';
@@ -38,52 +59,43 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(10, 10, 35, 0.7); /* Dark overlay for readability */
+            background: rgba(10, 10, 35, 0.7); 
             z-index: -1;
+            
         }
 
         .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            text-shadow: 0 0 10px rgba(0, 221, 235, 0.5);
-        }
+    font-size: 48px;
+    position: relative; /* или absolute */
+    top: -333px; 
+    text-shadow: 0 0 10px rgba(0, 221, 235, 0.5);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #ffffff;
+}
 
-        .hero p {
-            font-size: 18px;
-            max-width: 600px;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
 
-        .cta-button {
-            background: #00ddeb;
-            color: #0a0a23;
-            padding: 15px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
+      
+        
+       /* Library Fund Section */
+.library-fund {
+    padding: 120px 50px; /* Добавлен отступ сверху */
+    max-width: 1200px;
+    margin: 50px auto; /* Общий внешний отступ */
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    position: relative;
+    z-index: 1; /* Above particle background */
+}
 
-        .cta-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 221, 235, 0.5);
-        }
-
-        /* Library Fund Section */
-        .library-fund {
-            padding: 80px 50px;
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-        }
 
         .library-fund h2 {
             font-size: 36px;
             margin-bottom: 40px;
             text-shadow: 0 0 10px rgba(0, 221, 235, 0.5);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
         }
 
         .library-fund p {
@@ -91,6 +103,8 @@
             line-height: 1.6;
             opacity: 0.8;
             margin-bottom: 20px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 300;
         }
 
         /* Working Hours Section */
@@ -101,65 +115,106 @@
             text-align: center;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 15px;
+            position: relative;
+            z-index: 1;
+            margin-top: 20px;
         }
 
         .working-hours h3 {
             font-size: 24px;
             margin-bottom: 20px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
         }
 
         .working-hours p {
             font-size: 18px;
             opacity: 0.9;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 300;
         }
 
         /* Librarians Section */
         .librarians {
-            padding: 80px 50px;
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
+    padding: 60px 20px;
+    background-color: #00000000;
+    text-align: center;
+}
 
-        .librarians h2 {
-            font-size: 36px;
-            margin-bottom: 40px;
-            text-shadow: 0 0 10px rgba(0, 221, 235, 0.5);
-        }
+.librarians h2 {
+    font-size: 42px;
+    margin-bottom: 40px;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
 
-        .librarian-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
+.librarian-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-        .librarian-card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 15px;
-            transition: transform 0.3s;
-        }
+.librarian-card {
+    background-color: #9b9696be;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    padding: 30px 20px;
+}
 
-        .librarian-card:hover {
-            transform: translateY(-10px);
-        }
+.librarian-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
 
-        .librarian-card h3 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
+.librarian-card img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+}
 
-        .librarian-card p {
-            font-size: 16px;
-            opacity: 0.8;
-            margin-bottom: 15px;
-        }
+.librarian-card:hover img {
+    transform: scale(1.05);
+}
 
-        .librarian-card .contact {
-            font-size: 14px;
-            color: #00ddeb;
-        }
+.librarian-card h3 {
+    font-size: 26px;
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+}
 
+.librarian-card p {
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.librarian-card .contact {
+    font-size: 14px;
+    color: #007bff;
+    font-weight: bold;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+.librarian-card .contact:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+
+       
         /* Animations */
         @keyframes float {
             0% { transform: translateY(0); }
@@ -169,6 +224,7 @@
 
         .hero h1, .hero p, .cta-button {
             animation: float 3s ease-in-out infinite;
+            margin-top: -333;
         }
 
         /* Responsive */
@@ -181,63 +237,79 @@
                 font-size: 16px;
             }
 
-            .library-fund {
-                padding: 50px 20px;
-            }
-
-            .library-fund h2 {
-                font-size: 28px;
-            }
-
+           
             .working-hours {
                 padding: 30px 20px;
             }
 
-            .librarians {
-                padding: 50px 20px;
-            }
-
-            .librarians h2 {
-                font-size: 28px;
-            }
+           
         }
     </style>
 </head>
 <body>
-    <section class="hero" id="home">
-        <h1>Болашақ кітапханасы</h1>
-        <p>Білімді жұлдыздар сияқты зертте. Біздің кітапхана — жастар шабытпен кездесетін орын.</p>
-        <a href="#catalog" class="cta-button">Кітап табу</a>
-    </section>
+    <div id="particle-background"></div>
 
-    <section class="library-fund">
-        <h2>Кітапхана қоры</h2>
-        <p>Алматы политехникалық колледжінің кітапхана қоры шамамен 35 мың дана. Оған көркем әдебиет, ғылыми әдебиет, мамандандырылған оқулықтар және басқа да оқу құралдары кіреді. 2011 жылдан бастап кітап қоры цифрлық форматта цифрландырылуда.</p>
-        <p>Кітапхананың автоматтандырылған электрондық базасы «Кітапхана Ісі», «Qazaq Mura» платформаларында жұмыс істейді, сондай-ақ интернет желісіне қосылған. Материалдық-техникалық жабдықтарына моноблоктар, түрлі-түсті принтерлер, компьютерлер, ксерокстар және басқа да техника түрлері кіреді.</p>
-        <p>Кітапхана оқытушылармен және студенттермен тығыз байланыс орнатады, естелік күндерге арналған іс-шараларды ұдайы ұйымдастырады. Сондай-ақ кітапхана оқытушыларды жаңа кітаптар туралы хабардар етеді, сабақ тақырыптарына сәйкес өзекті материалдарды іріктеп береді, оқулықтармен қамтамасыз етеді және кітап көрмелерін ұйымдастырады.</p>
-    </section>
+    <div id="header-placeholder"></div>
+    <script>
+        fetch('/views/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+    </script>
 
-    <section class="working-hours">
-        <h3>Жұмыс уақыты</h3>
-        <p>8:00-ден 17:30-ға дейін</p>
-    </section>
+   
 
-    <section class="librarians">
-        <h2>Біздің команда</h2>
-        <div class="librarian-grid">
-            <div class="librarian-card">
-                <h3>Анна Смирнова</h3>
-                <p>Бас кітапханашы</p>
-                <p>Анна студенттерді білім зерттеуге шабыттандырады және кітапханада ерекше атмосфера қалыптастырады.</p>
-                <div class="contact">anna@librarycosmos.kz</div>
-            </div>
-            <div class="librarian-card">
-                <h3>Иван Петров</h3>
-                <p>Кітапханашының орынбасары</p>
-                <p>Иван цифрлық ресурстарға жауап береді және ғарыштық іс-шараларды ұйымдастыруға көмектеседі.</p>
-                <div class="contact">ivan@librarycosmos.kz</div>
-            </div>
+<section class="library-fund" >
+    <h2 data-translate="library_fund_title">Кітапхана қоры</h2>
+    <p data-translate="library_fund_text1">
+        <strong data-translate="as_of_2023">2023 жылғы мәліметтер бойынша</strong> Алматы политехникалық колледжінің кітапхана қоры шамамен 35 мың дана. Оған көркем әдебиет, ғылыми әдебиет, мамандандырылған оқулықтар және басқа да оқу құралдары кіреді. 2011 жылдан бастап кітап қоры цифрлық форматта цифрландырылуда.
+    </p>
+    <p data-translate="library_fund_text2">
+        Кітапхананың автоматтандырылған электрондық базасы «Кітапхана Ісі», «Qazaq Mura» платформаларында жұмыс істейді, сондай-ақ интернет желісіне қосылған. Материалдық-техникалық жабдықтарына моноблоктар, түрлі-түсті принтерлер, компьютерлер, ксерокстар және басқа да техника түрлері кіреді.
+    </p>
+    <p data-translate="library_fund_text3">
+        Кітапхана оқытушылармен және студенттермен тығыз байланыс орнатады, естелік күндерге арналған іс-шараларды ұдайы ұйымдастырады. Сондай-ақ кітапхана оқытушыларды жаңа кітаптар туралы хабардар етеді, сабақ тақырыптарына сәйкес өзекті материалдарды іріктеп береді, оқулықтармен қамтамасыз етеді және кітап көрмелерін ұйымдастырады.
+    </p>
+</section>
+
+<section class="librarians">
+    <h2 class="section-title text-4xl font-bold text-center">ҚҰРЫЛЫМЫ</h2>
+
+    <div class="librarian-grid">
+        <div class="librarian-card">
+            <img src="/static/images/lib1.jpg" alt="Мукалдиева Жанар Бокешовна">
+            <h3>Мукалдиева Жанар Бокешовна</h3>
+            <p data-translate="head_librarian">Кітапхана меңгерушісі</p>
         </div>
-    </section>
+        <div class="librarian-card">
+            <img src="/static/images/lib2.jpg" alt="Рашидова Мадина Рашидовна">
+            <h3>Рашидова Мадина Рашидовна</h3>
+            <p data-translate="librarian">Кітапханашы</p>
+        </div>
+    </div>
+</section>
+    
+    
+
+    <div id="footer-placeholder"></div>
+    <script>
+        fetch('/views/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+
+    <script src="/static/translations.js"></script>
+    <script src="/static/languageSwitcher.js"></script>
+    <script src="/static/virtualTour.js"></script>
+    <script src="/static/online_assistant.js"></script>
+    <script src="/static/script.js"></script>
+    <script src="/static/particles_config.js"></script>
+    <script src="/static/major-body.js"></script>
+    <script src="/static/partners-scroll.js"></script>
+    <script src="/static/header/main.js"></script>
+    <script src="/static/modal-page/js/specialtyPopup.js"></script>
 </body>
 </html>

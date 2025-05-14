@@ -616,20 +616,150 @@
 				
 					<!-- Элемент аккордеона 3 -->
 					<div class="accordion-item">
-						<div class="accordion-header" data-translate="atestat_2024">
-							Қабылдау ережелері 2024-2025
-						</div>
-						<div class="accordion-content">
-							<a class="download-btn" href="https://disk.yandex.kz/i/m0N76NiIFA9srg" download>
-								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-									<path
-										d="M5 20h14v-2H5v2zm7-18L5.33 11h3.67v4h6v-4h3.67L12 2z"
-									/>
-								</svg>
-								<span data-translate="download_pdf">Скачать PDF</span>
-							</a>
-						</div>
-					</div>
+  <div class="accordion-header" data-translate="atestat_2024">
+    Қабылдау ережелері 2024-2025
+  </div>
+  <div class="accordion-content">
+
+    <!-- Расписание 2024-2025 -->
+    <div class="sub-accordion">
+      <div class="sub-header">Расписание 2024-2025</div>
+      <div class="sub-content">
+
+        <!-- 1-семестр -->
+        <div class="inner-accordion">
+          <div class="inner-header">1-семестр</div>
+          <div class="inner-content">
+
+            <p>Расписание</p>
+            <a class="download-btn" href="https://your-link-1.com" target="_blank">
+              Скачать PDF
+            </a>
+
+            <p style="margin-top: 10px;">Факультатив</p>
+            <a class="download-btn" href="https://your-link-2.com" target="_blank">
+              Скачать PDF
+            </a>
+          </div>
+        </div>
+
+        <!-- 2-семестр -->
+        <div class="inner-accordion">
+          <div class="inner-header">2-семестр</div>
+          <div class="inner-content">
+
+            <p>Расписание</p>
+            <a class="download-btn" href="https://your-link-3.com" target="_blank">
+              Скачать PDF
+            </a>
+
+            <p style="margin-top: 10px;">Факультатив</p>
+            <a class="download-btn" href="https://your-link-4.com" target="_blank">
+              Скачать PDF
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+  body {
+    background-color: #1c1c1c;
+    color: #f0f0f0;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .accordion-item {
+    background-color: #2a2a2a;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+    overflow: hidden;
+  }
+
+  .accordion-header {
+    padding: 15px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    background: #2a2a2a;
+    cursor: pointer;
+    border-bottom: 1px solid #00ffff66;
+  }
+
+  .accordion-content {
+    display: none;
+    padding: 15px 20px;
+    background-color: #1e1e1e;
+  }
+
+  .sub-header, .inner-header {
+    cursor: pointer;
+    background: #333;
+    padding: 10px 15px;
+    margin-top: 10px;
+    font-weight: bold;
+    border-left: 3px solid #00ffff;
+    border-radius: 6px;
+    transition: background 0.3s;
+  }
+
+  .sub-header:hover, .inner-header:hover {
+    background: #444;
+  }
+
+  .sub-content, .inner-content {
+    display: none;
+    padding: 10px 15px;
+    background-color: #262626;
+    margin-top: 5px;
+    border-left: 2px solid #00ffff55;
+  }
+
+  .download-btn {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 8px 14px;
+    background: #00ffff;
+    color: #000;
+    text-decoration: none;
+    border-radius: 6px;
+    box-shadow: 0 0 10px #00ffff88;
+    transition: background 0.3s, transform 0.2s;
+  }
+
+  .download-btn:hover {
+    background: #00e6e6;
+    transform: scale(1.05);
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const accordionHeader = document.querySelector('.accordion-header');
+    const accordionContent = document.querySelector('.accordion-content');
+
+    // По клику сворачиваем или раскрываем
+    accordionHeader.addEventListener('click', () => {
+      const isVisible = accordionContent.style.display === 'block';
+      accordionContent.style.display = isVisible ? 'none' : 'block';
+    });
+
+    // Вложенные секции
+    document.querySelectorAll('.sub-header, .inner-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const content = header.nextElementSibling;
+        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+  });
+</script>
+
+
+
 				</div>
 			</div>
 		</div>
