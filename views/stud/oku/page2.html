@@ -639,7 +639,35 @@
 
 		<!-- JS для аккордеона -->
 		<script>
-			const headers = document.querySelectorAll('.accordion-header')
+			const headers = document.querySelectorAll(   </div>
+            </div>
+        </div>
+        <div class="deputies-container">
+            <div class="admin-card">
+                <img src="/static/images/admin/18.jpg" alt="Заместитель по учебно-производственной работе" class="admin-avatar">
+                <div class="admin-info">
+                    <h3 class="admin-title">Заместитель директора по  информационным технологиям </h3>
+                    <p class="admin-text">ФИО: Кабылбек Агызамбек</p>
+                    <button class="admin-btn" data-target="deputy-production-info">Подробнее</button>
+                    <div id="deputy-production-info" class="admin-hidden">
+                        Руководит производственной практикой студентов, обеспечивая их готовность к профессиональной деятельности.
+                    </div>
+                </div>
+            </div>
+            
+            <!-- <div class="admin-card">
+                <img src="/static/images/admin/16.JPG" alt="Заместитель по административно-хозяйственной части" class="admin-avatar">
+                <div class="admin-info">
+                    <h3 class="admin-title">Заместитель директора по ....</h3>
+                    <p class="admin-text">ФИО: Орыншайхова Галия Асхатовна</p>
+                    <button class="admin-btn" data-target="deputy-admin-info">Подробнее</button>
+                    <div id="deputy-admin-info" class="admin-hidden">
+                        Обеспечивает функционирование инфраструктуры колледжа и комфортные условия для обучения.
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </section>'.accordion-header')
 			headers.forEach(header => {
 				header.addEventListener('click', () => {
 					const content = header.nextElementSibling

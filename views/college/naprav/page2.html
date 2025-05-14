@@ -152,6 +152,42 @@
 					padding: 8px 12px;
 				}
 			}
+			.photo-description {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .photo img {
+    width: 100%;
+    max-width: 500px; /* максимальная ширина изображения */
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .description {
+    max-width: 600px;
+  }
+
+  .description h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .description p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
 		</style>
 	</head>
 	<body>
@@ -610,7 +646,19 @@
 <div class="regulations-section">
 	<div class="content-wrapper">
 		<h1 data-translate="upbringing_work_title">Воспитательная работа колледжа</h1>
+		<section class="photo-description">
+			<div class="container">
+			  <div class="photo">
+				<img src="/static/images/stud/fa.jpg" alt="Описание фото">
+			  </div>
+			  <div class="description">
+				
+				<p data-translate="naprav_2">2024 жылғы 30 шілдедегі №194 бұйрыққа сәйкес, Қазақстан Республикасының Оқу-ағарту министрлігі білім беру ұйымдарына арналған «Біртұтас тәрбие» бағдарламасын бекітті. Қазіргі таңда осы жаңа бағдарлама негізінде тәрбие жұмысы жүргізілуде.
 
+					Тәрбие жұмысының басты мақсаты – бәсекеге қабілетті,  жоғары мәдениеті және азаматтық жауапкершілігі бар, елін сүйетін ұлтжанды, ұлттық құндылықтарды бойына сіңірген еңбекқор, адал, саналы, жасампаз азаматтарды тәрбиелеу.</p>
+			  </div>
+			</div>
+		  </section>
 		<div class="accordion">
 			<!-- План воспитательной работы 2021-2022 -->
 			<div class="accordion-item">
@@ -618,7 +666,7 @@
 					План воспитательной работы 2021–2022
 				</div>
 				<div class="accordion-content">
-					<a class="download-btn" href="https://disk.yandex.kz/i/8gdq2dKwq8zENg" download>
+					<a class="download-btn" target="_blank" href="https://disk.yandex.kz/i/_vcLRAiPC7dpPA" download>
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
 							<path d="M5 20h14v-2H5v2zm7-18L5.33 11h3.67v4h6v-4h3.67L12 2z" />
 						</svg>
