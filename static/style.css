@@ -294,6 +294,8 @@ nav ul li a:hover {
 
 
 /* Секция мамандықтар */
+
+
 .majors {
     background: transparent;
     padding: 50px 5%;
@@ -329,6 +331,9 @@ nav ul li a:hover {
     width: 60px;
     z-index: 2;
     pointer-events: none;
+}
+.majors-list .major-card p {
+    color: var(--bs-white) !important;
 }
 
 /* Левая дымка */
@@ -383,7 +388,7 @@ nav ul li a:hover {
 .majors-list .major-card p {
     font-family: var(--font-main);
     margin: 5px 0;
-    color: var(--light);
+    color: #ffffff;
 }
 
 .majors-list .major-card p:first-of-type {
@@ -395,7 +400,7 @@ nav ul li a:hover {
 .majors-list .major-card p:nth-of-type(2) {
     font-size: 1.2rem;
     font-weight: 600;
-    color: var(--light);
+    color: #ffffff;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -423,18 +428,6 @@ nav ul li a:hover {
     
 }
 
-/* 
-@media (max-width: 768px) {
-    .majors-list .major-card {
-        flex: 0 0 250px;
-    }
-}
-
-@media (max-width: 480px) {
-    .majors-list .major-card {
-        flex: 0 0 200px;
-    }
-} */
 
 /* Модальное окно специальностей */
 .specialtyPopup {

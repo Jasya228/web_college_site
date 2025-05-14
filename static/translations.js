@@ -482,7 +482,7 @@ it_hub_regulation_title: "IT HUB - Положение",
 	schedule_2024: "Расписание 2024-2025",
 	Libary: "Библиотека",
 	pol_jastar: "Молодежный клуб политех",
-
+	menu_student_clubs: "Студенческие клубы",
 
 
 
@@ -975,7 +975,7 @@ it_hub: "IT HUB",
     librarian: "Librarian",
 	Libary: "Library",
 	pol_jastar: "POLYTECHNIC YOUTHS CLUB",
-
+	menu_student_clubs: "STUDENT CLUBS",
 
 
 
@@ -1479,5 +1479,6 @@ upd_forms_title: 'Оқу-өндірістік практика формалар�
     librarian: "Кітапханашы",
     Libary: "Кітапхана",
 	pol_jastar: "Политех жастары",
+	menu_student_clubs: "Студенттік клубтар",
 	},
 }
