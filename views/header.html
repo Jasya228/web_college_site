@@ -16,10 +16,6 @@
     <link rel="stylesheet" href="/static/header/styles.css">
 </head>
 <body>
-
-
-   
-    
     <div class="info-bar">
         <div class="info-container">
             <div class="info-item">
@@ -51,14 +47,13 @@
         <div class="header-container">
             <div class="logo">
                 <button 
-    onclick="window.location.href='https://almatypolytech.edu.kz/';" 
-    style="background: none; border: none; padding: 0; cursor: pointer;">
-    <img 
-    src="/static/images/header/LOGO_NEW.png" 
-    alt="POLYTECH" 
-    style="height: 80px;" 
-    >
-    </button>
+                    onclick="window.location.href='https://almatypolytech.edu.kz/';" 
+                    style="background: none; border: none; padding: 0; cursor: pointer;">
+                    <img 
+                        src="/static/images/header/LOGO_NEW.png" 
+                        alt="POLYTECH" 
+                        style="height: 80px;">
+            </button>
     
                 <button 
                     onclick="window.open('https://edu.aspc.kz/?ysclid=lscxoszymx908089861', '_blank')"
@@ -469,6 +464,25 @@
     </nav>	
 
    
+
+    <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggleButton = document.querySelector(".mobile-menu-toggle");
+    const mobileMenu = document.querySelector(".mobile-menu");
+    const overlay = document.querySelector(".overlay");
+
+    toggleButton.addEventListener("click", () => {
+      mobileMenu.classList.toggle("open");
+      overlay.classList.toggle("active");
+    });
+
+    overlay.addEventListener("click", () => {
+      mobileMenu.classList.remove("open");
+      overlay.classList.remove("active");
+    });
+  });
+</script>
+
 
     <script src="/static/translations.js"></script>
     <script src="/static/languageSwitcher.js"></script>
