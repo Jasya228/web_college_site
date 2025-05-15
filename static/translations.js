@@ -484,9 +484,22 @@ it_hub_regulation_title: "IT HUB - Положение",
 	pol_jastar: "Молодежный клуб политех",
 	menu_student_clubs: "Студенческие клубы",
 	qurlym: "Структура ",
-	methodological_recommendations_5: "МЕТОДИЧЕСКОЕ РУКОВОДСТВО 1"
-
-
+	methodological_recommendations_5: "МЕТОДИЧЕСКОЕ РУКОВОДСТВО 1",
+	Board_of_Trustees: "Индустрияльный совет",
+	Industrial_Council: "Попечительский совет",
+	industr_1: "План работы индустриального совета",
+	industr_2: "Приказ индустриального совета",
+	industr_3: "Протокол индустриального совета",
+	industr_rules: "Индустрияльный совет",
+	Board_of_Trustees_title: "Попечительский совет",
+	Minutes_Trustees_1: "Приказ МОН РК попечительского совете",
+	Minutes_Trustees_2: "План работы попечительского совета",
+	Minutes_Trustees_3: "Состав попечительского совета",
+	Minutes_Trustees_4: "Протокол попечительского совета",
+	plan_OOO_1: "ӨОЖ жоспарлары-План работы по производственному обучению",
+	plan_OOO_1_1: "2023-2024 План работы ППО",
+	plan_OOO_1_2: "2024-2025 План работы ППО",
+	oJ_plan: "План работы по производственному обучению"
 
 
 
@@ -978,7 +991,23 @@ it_hub: "IT HUB",
 	pol_jastar: "POLYTECHNIC YOUTHS CLUB",
 	menu_student_clubs: "STUDENT CLUBS",
 	qurlym: "Structure",
-	methodological_recommendations_5: "METHODOLOGICAL GUIDE 1"
+	methodological_recommendations_5: "METHODOLOGICAL GUIDE 1",
+	Board_of_Trustees: "Board_of_Trustees",
+	Industrial_Council: "Industrial_Council",
+	industr_1: "Work plan of the industrial council",
+	industr_2: "Order of the industrial council",
+	industr_3: "Minutes of the industrial council",
+	industr_rules: "Industrial council",
+	Board_of_Trustees_title: "Board of Trustees",
+	Minutes_Trustees_1: "Order of the MES RK on the Board of Trustees",
+	Minutes_Trustees_2: "Work Plan of the Board of Trustees",
+	Minutes_Trustees_3: "Composition of the Board of Trustees",
+	Minutes_Trustees_4: "Minutes of the Board of Trustees",
+	plan_OOO_1: "ӨОЖ жоспарлары-План работы по производственному обучению",
+	plan_OOO_1_1: "2023-2024 План работы ППО",
+	plan_OOO_1_2: "2024-2025 План работы ППО",
+	oJ_plan: "ӨОЖ жоспарлары"
+
 
 
 
@@ -1487,7 +1516,22 @@ upd_forms_title: 'Оқу-өндірістік практика формалар�
 	pol_jastar: "Политех жастары",
 	menu_student_clubs: "Студенттік клубтар",
 	qurlym: "Құрлым",
-	methodological_recommendations_5: "ӘДІСТЕМЕЛІК НҰСҚАУЛЫҚ "
+	methodological_recommendations_5: "ӘДІСТЕМЕЛІК НҰСҚАУЛЫҚ ",
+	Board_of_Trustees: "Индустриялдық кеңес",
+	Industrial_Council: "Қамқоршылар кеңесі",
+	industr_1: "«Индустриялдық кеңестің жұмыс жоспары»",
+	industr_2: "Индустриялдық кеңестің бұйрығы»",
+	industr_3: "«Индустриялдық кеңестің хаттамасы»",
+	industr_rules: "Индустриялдық кеңес",
+	Board_of_Trustees_title: "Қамқоршылар кеңесі",
+	Minutes_Trustees_1: "ҚР БҒМ-нің Қамқоршылық кеңесі туралы бұйрығы",
+	Minutes_Trustees_2: "Қамқоршылық кеңесінің жұмыс жоспары",
+	Minutes_Trustees_3: "Қамқоршылық кеңесі",
+	Minutes_Trustees_4: "Қамқоршылық кеңесінің хаттамасы",
+	plan_OOO_1: "ӨОЖ жоспарлары",
+	plan_OOO_1_1: "2023-2024 ОӨЖ жоспары",
+	plan_OOO_1_2: "2024-2025 ОӨЖ жоспары",
+	oJ_plan: "ӨОЖ жоспарлары"
 
 	},
 }
