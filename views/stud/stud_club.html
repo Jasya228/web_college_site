@@ -8,6 +8,17 @@
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <title>Студенческие клубы</title>
     <style>
+        :root {
+            --primary-color: #00b4d8;
+            --secondary-color: #0077b6;
+            --accent-color: #00eaff;
+            --text-color: #ffffff;
+            --bg-color: #0d1b2a;
+            --card-bg: rgba(13, 27, 42, 0.8);
+            --modal-bg: rgba(0, 20, 40, 0.95);
+            --shadow: 0 10px 30px rgba(0, 180, 216, 0.3);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -17,10 +28,8 @@
         body {
             font-family: 'Roboto', sans-serif;
             background: linear-gradient(145deg, #0d1b2a, #1b263b);
+            color: var(--text-color);
             min-height: 100vh;
-            /* display: flex; */
-            justify-content: center;
-            align-items: center;
             overflow-x: hidden;
             position: relative;
         }
@@ -32,15 +41,18 @@
             width: 100%;
             height: 100%;
             z-index: -1;
+            opacity: 0.5;
         }
+
         .content-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: calc(100vh - высота_хедера); /* замените "высота_хедера" на реальную высоту */
-    padding-top: высота_хедера; /* чтобы контент не накладывался на хедер */
-    width: 100%;
-}
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            width: 100%;
+            padding: 20px;
+        }
+
         .club-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -48,24 +60,26 @@
             max-width: 1200px;
             padding: 20px;
             margin: 20px;
-             /* display: flex; */
+            z-index: 1;
         }
 
         .club-card {
-            background: rgb(255, 255, 255);
+            background: var(--card-bg);
             backdrop-filter: blur(12px);
-            border: 1px solid rgb(0, 0, 0);
+            border: 1px solid rgba(0, 180, 216, 0.3);
             padding: 25px;
             border-radius: 20px;
             text-align: center;
             transition: transform 0.4s ease, box-shadow 0.4s ease;
-            color: #e0e0e0;
+            color: var(--text-color);
             cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
         .club-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(0, 255, 255, 0.4);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 180, 216, 0.4);
+            border: 1px solid var(--accent-color);
         }
 
         .club-card img {
@@ -73,51 +87,58 @@
             height: auto;
             border-radius: 12px;
             margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .club-card:hover img {
+            transform: scale(1.1);
         }
 
         .club-card h3 {
             font-family: 'Orbitron', sans-serif;
-            color: #ff0000;
+            color: #00b4d8;
             font-size: 1.3em;
             margin-bottom: 10px;
-            letter-spacing: 2px;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        .club-card:hover h3 {
+            color: var(--accent-color);
+            text-shadow: 0 0 10px rgba(0, 234, 255, 0.5);
         }
 
         .club-card p {
             font-size: 0.95em;
-            color: #000000;
+            color: var(--text-color);
             margin: 8px 0;
+            line-height: 1.6;
         }
 
         .club-card a {
-            color: #00ffcc;
+            color: var(--accent-color);
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s ease;
         }
 
         .club-card a:hover {
-            color: #ff4081;
+            color: #ffffff;
+            text-decoration: underline;
         }
 
         .club-logo {
-    width: 150px;
-    height: 150px;
-    object-fit: cover; /* обрежет изображение по размеру */
-    border-radius: 12px;
-    margin-bottom: 15px;
-}
-.club-logo {
-    transition: transform 0.3s ease;
-}
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 15px;
+           
+        }
 
-.club-card:hover .club-logo {
-    transform: scale(1.1);
-}
-
-   /* Модальное окно */
-   .modal {
+        /* Модальное окно */
+        .modal {
             display: none;
             position: fixed;
             z-index: 1000;
@@ -125,7 +146,8 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
             overflow: auto;
         }
 
@@ -139,6 +161,7 @@
             position: relative;
             box-shadow: var(--shadow);
             animation: modalopen 0.4s ease-out;
+            border: 1px solid var(--accent-color);
         }
 
         @keyframes modalopen {
@@ -158,7 +181,8 @@
         }
 
         .close:hover {
-            color: var(--primary-color);
+            color: #ffffff;
+            transform: scale(1.2);
         }
 
         .modal-img {
@@ -167,20 +191,40 @@
             object-fit: contain;
             margin: 0 auto 20px;
             display: block;
+            
+           
+            padding: 5px;
         }
 
         .modal h2 {
             font-family: 'Orbitron', sans-serif;
-            color: var(--text-color);
+            color: var(--accent-color);
             text-align: center;
             margin-bottom: 20px;
-            font-size: 1.5em;
+            font-size: 1.8em;
+            letter-spacing: 1px;
         }
 
         .modal p {
             color: var(--text-color);
             line-height: 1.6;
             font-size: 1em;
+            margin-bottom: 15px;
+        }
+
+        .modal strong {
+            color: var(--accent-color);
+        }
+
+        /* Анимации */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
         }
 
         /* Адаптивность */
@@ -193,11 +237,20 @@
                 width: 95%;
                 padding: 20px;
             }
+            
+            .club-card {
+                padding: 20px;
+            }
+            
+            .club-card h3 {
+                font-size: 1.1em;
+            }
         }
     </style>
 </head>
 <body>
     <div id="header-placeholder"></div>
+    <div id="particles-js"></div>
 
     <script>
         fetch('/views/header.html')
@@ -249,259 +302,287 @@
                 });
             }
         }
-        
     </script>
-  <div class="content-wrapper">
-    <div class="club-grid">
-        <!-- Клуб 1 -->
-        <div class="club-card" onclick="window.location.href='/views/stud/jastar.html'">
-            <img class="club-logo" src="/static/images/Logo_club/l1.png" alt="POLYTECH JASTARY">
-            <h3>ЖІК «POLYTECH JASTARY» ҰЙЫМЫ</h3>
-            <p>ЖІК «POLYTECH JASTARY» ұйымы - ұйымы талантты, жалынды жастардың басын біріктіріп, шығармашылығын дамытуға көмек көрсетеді.</p>
+    
+    <div class="content-wrapper">
+        <div class="club-grid">
+            <!-- Клуб 1 -->
+            <div class="club-card" onclick="window.location.href='/views/stud/jastar.html'">
+                <img class="club-logo floating" src="/static/images/Logo_club/l1.png" alt="POLYTECH JASTARY">
+                <h3>ЖІК «POLYTECH JASTARY» ҰЙЫМЫ</h3>
+                <p>ЖІК «POLYTECH JASTARY» ұйымы - ұйымы талантты, жалынды жастардың басын біріктіріп, шығармашылығын дамытуға көмек көрсетеді.</p>
+            </div>
+            
+            <!-- Клуб 2 -->
+            <div class="club-card" onclick="openModal('modal2')">
+                <img class="club-logo floating" src="/static/images/Logo_club/l2.png" alt="POLYTECH ZIATKERLERI">
+                <h3>«POLYTECH ZIATKERLERI» ИПК клубы</h3>
+                <p>«POLYTECH ZIATKERLERI» интеллектуалды пікірсайыс клубы - бұл толеранттылықты, шешендік шеберлікті, сыни ойлауды және жастардың көшбасшылық қасиеттерін дамытуды жүзеге асыратын студенттердің ерікті бірлестігі.</p>
+            </div>
+            
+            <!-- Клуб 3 -->
+            <div class="club-card" onclick="openModal('modal3')">
+                <img class="club-logo floating" src="/static/images/Logo_club/l3.png" alt="POLYTECH ERIKTILERI">
+                <h3>«POLYTECH ERIKTILERI» еріктілері клубы</h3>
+                <p>«POLYTECH ERIKTILERI» – колледж студенттерін қоғамдық өмірге белсенді араластыру, еріктілік мәдениетін қалыптастыру және әлеуметтік маңызды жобаларға атсалысу арқылы жауапкершілік пен жанашырлық қасиеттерін дамыту.</p>
+            </div>
+            
+            <!-- Клуб 4 -->
+            <div class="club-card" onclick="openModal('modal4')">
+                <img class="club-logo floating" src="/static/images/Logo_club/l4.png" alt="СТУДЕНТТІК КЕҢЕС">
+                <h3>«СТУДЕНТТІК КЕҢЕС»</h3>
+                <p>Студенттер үйіндегі «Студенттік кеңес» – студенттердің бос уақытын ұйымдастыру және жаңа бастамаларына қолдау көрсетіп, өзекті сұрақтарды шешу бойынша бастамашыл өзін-өзі басқару ұйымы.</p>
+            </div>
+            
+            <!-- Клуб 5 -->
+            <div class="club-card" onclick="openModal('modal5')">
+                <img class="club-logo floating" src="/static/images/Logo_club/l5.png" alt="KIROSHI">
+                <h3>«KIROSHI»</h3>
+                <p>«KIROSHI» робототехника зертханасы студенттердің инженерлік және техникалық дағдыларын дамытып, инновациялық технологиялар саласындағы әлеуетін ашуға мүмкіндік беретін ынталы әрі талантты студенттерді біріктіреді.</p>
+            </div>
+            
+            <!-- Клуб 6 -->
+            <div class="club-card" onclick="openModal('modal6')">
+                <img class="club-logo floating" src="/static/images/Logo_club/l6.png" alt="ЖАС ҚЫРАН">
+                <h3>«ЖАС ҚЫРАН» ӘПК КЛУБЫ</h3>
+                <p>«Жас қыран» әскери-патриоттық клубы – әскери-патриоттық тәрбие беру іс-шараларын өткізуге бағытталған, студенттердің бірлескен іс-әрекеттегі мүдделерінің ортақтығы негізінде құрылған ерікті бірлестік</p>
+            </div>
+            
+            <!-- Клуб 7 -->
+            <div class="club-card" onclick="openModal('modal7')">
+                <img class="club-logo floating" src="/static/images/Logo_club/l7.png" alt="SANALY URPAQ">
+                <h3>«SANALY URPAQ» ЕПК КЛУБЫ</h3>
+                <p>«Sanaly urpaq» ерікті-патриоттық клубы – колледждегі құқықтық білім, сыбайлас жемқорлыққа қарсы мәдениетті насихаттау үшін құрылған студенттердің ерікті бірлестігі.</p>
+            </div>
+            
+            <!-- Клуб 8 -->
+            <div class="club-card" onclick="openModal('modal8')">
+                <img class="club-logo floating" src="/static/images/Logo_club/l8.png" alt="ҚЫЗ ЕЛДІҢ КӨРКІ">
+                <h3>«ҚЫЗ ЕЛДІҢ КӨРКІ» ҚЫЗДАР КЛУБЫ</h3>
+                <p>«Қыз елдің көркі» қыздар клубы - қыз балаларды ұлттық тұрғыда халқымыздың әдет - ғұрпын, салт - дәстүрін қадірлеу, ұлтжанды, отансүйгіштік сезімдерге баулу, тәрбиелеу.</p>
+            </div>
+            
+            <!-- Клуб 9 -->
+            <div class="club-card" onclick="openModal('modal9')">
+                <img class="club-logo floating" src="/static/images/Logo_club/l9.png" alt="СПОРТТЫҚ ҮЙІРМЕЛЕР">
+                <h3>СПОРТТЫҚ ҮЙІРМЕЛЕР</h3>
+                <p>Студенттердің дене тәрбиесін жетілдіру, салауатты өмір салтын қалыптастыру, спорттық дағдыларын дамыту және бос уақытын тиімді ұйымдастыру. Спорт үйірмелері: футбол, волейбол, баскетбол, тоғызқұмалақ, шахмат, шашки</p>
+            </div>
+            
+            <!-- Клуб 10 -->
+            <div class="club-card" onclick="openModal('modal10')">
+                <img class="club-logo floating" src="/static/images/Logo_club/l10.png" alt="ТІЛДЕР ӘЛЕМІ">
+                <h3>«ТІЛДЕР ӘЛЕМІ»</h3>
+                <p>«Тілдер әлемі» тілдерін үйрету арқылы олардың білім көкжиегін кеңейту, кәсіби және жеке даму мүмкіндіктерін арттыру - 2023-2024 - Ағылшын тілі - ⁠2024-2025 - Түрік тілі</p>
+            </div>
         </div>
-        
-        
-        <!-- Клуб 2 -->
-        <div class="club-card" onclick="openModal('modal2')">
-            <img class="club-logo" src="/static/images/Logo_club/l2.png" alt="POLYTECH ZIATKERLERI">
-            <h3>«POLYTECH ZIATKERLERI» ИПК клубы</h3>
+    </div>
+
+    <!-- Модальные окна -->
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal2')">&times;</span>
+            <img class="modal-img" src="/static/images/Logo_club/l2.png" alt="POLYTECH ZIATKERLERI">
+            <h2>«POLYTECH ZIATKERLERI» ИПК клубы</h2>
             <p>«POLYTECH ZIATKERLERI» интеллектуалды пікірсайыс клубы - бұл толеранттылықты, шешендік шеберлікті, сыни ойлауды және жастардың көшбасшылық қасиеттерін дамытуды жүзеге асыратын студенттердің ерікті бірлестігі.</p>
+            <p><strong>Негізгі қызметтер:</strong> Ай сайын пікірсайыс турнирлері, оқу семинарлары, қоғамдық пікірталастар.</p>
         </div>
-        
-        <!-- Остальные клубы аналогично -->
-        <!-- Клуб 3 -->
-        <div class="club-card" onclick="openModal('modal3')">
-            <img class="club-logo" src="/static/images/Logo_club/l3.png" alt="POLYTECH ERIKTILERI">
-            <h3>«POLYTECH ERIKTILERI» еріктілері клубы</h3>
+    </div>
+
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal3')">&times;</span>
+            <img class="modal-img" src="/static/images/Logo_club/l3.png" alt="POLYTECH ERIKTILERI">
+            <h2>«POLYTECH ERIKTILERI» еріктілері клубы</h2>
             <p>«POLYTECH ERIKTILERI» – колледж студенттерін қоғамдық өмірге белсенді араластыру, еріктілік мәдениетін қалыптастыру және әлеуметтік маңызды жобаларға атсалысу арқылы жауапкершілік пен жанашырлық қасиеттерін дамыту.</p>
+            <p><strong>Жобалар:</strong> Балалар үйлеріне көмек, экологиялық акциялар, қарттарға көмек жобалары.</p>
         </div>
-        
-        <!-- Клуб 4 -->
-        <div class="club-card" onclick="openModal('modal4')">
-            <img class="club-logo" src="/static/images/Logo_club/l4.png" alt="СТУДЕНТТІК КЕҢЕС">
-            <h3>«СТУДЕНТТІК КЕҢЕС»</h3>
+    </div>
+
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal4')">&times;</span>
+            <img class="modal-img" src="/static/images/Logo_club/l4.png" alt="СТУДЕНТТІК КЕҢЕС">
+            <h2>«СТУДЕНТТІК КЕҢЕС»</h2>
             <p>Студенттер үйіндегі «Студенттік кеңес» – студенттердің бос уақытын ұйымдастыру және жаңа бастамаларына қолдау көрсетіп, өзекті сұрақтарды шешу бойынша бастамашыл өзін-өзі басқару ұйымы.</p>
+            <p><strong>Функциялары:</strong> Студенттік өмірді ұйымдастыру, мәселелерді шешу, әлеуметтік жобаларды іске асыру.</p>
         </div>
-        
-        <!-- Клуб 5 -->
-        <div class="club-card" onclick="openModal('modal5')">
-            <img class="club-logo" src="/static/images/Logo_club/l5.png" alt="KIROSHI">
-            <h3>«KIROSHI»</h3>
+    </div>
+
+    <div id="modal5" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal5')">&times;</span>
+            <img class="modal-img" src="/static/images/Logo_club/l5.png" alt="KIROSHI">
+            <h2>«KIROSHI»</h2>
             <p>«KIROSHI» робототехника зертханасы студенттердің инженерлік және техникалық дағдыларын дамытып, инновациялық технологиялар саласындағы әлеуетін ашуға мүмкіндік беретін ынталы әрі талантты студенттерді біріктіреді.</p>
+            <p><strong>Қызметтер:</strong> Робототехника курстары, хакатондар, техникалық жарыстар.</p>
         </div>
-        
-        <!-- Клуб 6 -->
-        <div class="club-card" onclick="openModal('modal6')">
-            <img class="club-logo" src="/static/images/Logo_club/l6.png" alt="ЖАС ҚЫРАН">
-            <h3>«ЖАС ҚЫРАН» ӘПК КЛУБЫ</h3>
+    </div>
+
+    <div id="modal6" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal6')">&times;</span>
+            <img class="modal-img" src="/static/images/Logo_club/l6.png" alt="ЖАС ҚЫРАН">
+            <h2>«ЖАС ҚЫРАН» ӘПК КЛУБЫ</h2>
             <p>«Жас қыран» әскери-патриоттық клубы – әскери-патриоттық тәрбие беру іс-шараларын өткізуге бағытталған, студенттердің бірлескен іс-әрекеттегі мүдделерінің ортақтығы негізінде құрылған ерікті бірлестік</p>
+            <p><strong>Іс-шаралар:</strong> Әскери дайындық, патриоттық акциялар, тарихи экскурсиялар.</p>
         </div>
-        
-        <!-- Клуб 7 -->
-        <div class="club-card" onclick="openModal('modal7')">
-            <img class="club-logo" src="/static/images/Logo_club/l7.png" alt="SANALY URPAQ">
-            <h3>«SANALY URPAQ» ЕПК КЛУБЫ</h3>
+    </div>
+
+    <div id="modal7" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal7')">&times;</span>
+            <img class="modal-img" src="/static/images/Logo_club/l7.png" alt="SANALY URPAQ">
+            <h2>«SANALY URPAQ» ЕПК КЛУБЫ</h2>
             <p>«Sanaly urpaq» ерікті-патриоттық клубы – колледждегі құқықтық білім, сыбайлас жемқорлыққа қарсы мәдениетті насихаттау үшін құрылған студенттердің ерікті бірлестігі.</p>
+            <p><strong>Бағыттар:</strong> Құқықтық сауаттылық, антикоррупциялық білім, заңгерлік қызмет.</p>
         </div>
-        
-        <!-- Клуб 8 -->
-        <div class="club-card" onclick="openModal('modal8')">
-            <img class="club-logo" src="/static/images/Logo_club/l8.png" alt="ҚЫЗ ЕЛДІҢ КӨРКІ">
-            <h3>«ҚЫЗ ЕЛДІҢ КӨРКІ» ҚЫЗДАР КЛУБЫ</h3>
+    </div>
+
+    <div id="modal8" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal8')">&times;</span>
+            <img class="modal-img" src="/static/images/Logo_club/l8.png" alt="ҚЫЗ ЕЛДІҢ КӨРКІ">
+            <h2>«ҚЫЗ ЕЛДІҢ КӨРКІ» ҚЫЗДАР КЛУБЫ</h2>
             <p>«Қыз елдің көркі» қыздар клубы - қыз балаларды ұлттық тұрғыда халқымыздың әдет - ғұрпын, салт - дәстүрін қадірлеу, ұлтжанды, отансүйгіштік сезімдерге баулу, тәрбиелеу.</p>
+            <p><strong>Іс-шаралар:</strong> Ұлттық қолөнер шеберханасы, дәстүрлі мерекелер, әйелдер лидерлігі жобалары.</p>
         </div>
-        
-        <!-- Клуб 9 -->
-        <div class="club-card" onclick="openModal('modal9')">
-            <img class="club-logo" src="/static/images/Logo_club/l9.png" alt="СПОРТТЫҚ ҮЙІРМЕЛЕР">
-            <h3>СПОРТТЫҚ ҮЙІРМЕЛЕР</h3>
+    </div>
+
+    <div id="modal9" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal9')">&times;</span>
+            <img class="modal-img" src="/static/images/Logo_club/l9.png" alt="СПОРТТЫҚ ҮЙІРМЕЛЕР">
+            <h2>СПОРТТЫҚ ҮЙІРМЕЛЕР</h2>
             <p>Студенттердің дене тәрбиесін жетілдіру, салауатты өмір салтын қалыптастыру, спорттық дағдыларын дамыту және бос уақытын тиімді ұйымдастыру. Спорт үйірмелері: футбол, волейбол, баскетбол, тоғызқұмалақ, шахмат, шашки</p>
+            <p><strong>Спорт түрлері:</strong> Командалық ойындар, ақыл ойындары, жеке спорт түрлері.</p>
         </div>
-        
-        <!-- Клуб 10 -->
-        <div class="club-card" onclick="openModal('modal10')">
-            <img class="club-logo" src="/static/images/Logo_club/l10.png" alt="ТІЛДЕР ӘЛЕМІ">
-            <h3>«ТІЛДЕР ӘЛЕМІ»</h3>
+    </div>
+
+    <div id="modal10" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal10')">&times;</span>
+            <img class="modal-img" src="/static/images/Logo_club/l10.png" alt="ТІЛДЕР ӘЛЕМІ">
+            <h2>«ТІЛДЕР ӘЛЕМІ»</h2>
             <p>«Тілдер әлемі» тілдерін үйрету арқылы олардың білім көкжиегін кеңейту, кәсіби және жеке даму мүмкіндіктерін арттыру - 2023-2024 - Ағылшын тілі - ⁠2024-2025 - Түрік тілі</p>
+            <p><strong>Бағдарлама:</strong> Тіл үйрену курстары, мәдениетаралық алмасу, халықаралық сертификаттарға дайындық.</p>
         </div>
     </div>
-</div>
 
-<!-- Модальные окна для каждого клуба -->
-<!-- Модальное окно 1 -->
-
-<!-- Модальное окно 2 -->
-<div id="modal2" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal('modal2')">&times;</span>
-        <img class="modal-img" src="/static/images/Logo_club/l2.png" alt="POLYTECH ZIATKERLERI">
-        <h2>«POLYTECH ZIATKERLERI» ИПК клубы</h2>
-        <p>«POLYTECH ZIATKERLERI» интеллектуалды пікірсайыс клубы - бұл толеранттылықты, шешендік шеберлікті, сыни ойлауды және жастардың көшбасшылық қасиеттерін дамытуды жүзеге асыратын студенттердің ерікті бірлестігі.</p>
-        <p><strong>Негізгі қызметтер:</strong> Ай сайын пікірсайыс турнирлері, оқу семинарлары, қоғамдық пікірталастар.</p>
-    </div>
-</div>
-
-<!-- Остальные модальные окна аналогично -->
-<!-- Модальное окно 3 -->
-<div id="modal3" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal('modal3')">&times;</span>
-        <img class="modal-img" src="/static/images/Logo_club/l3.png" alt="POLYTECH ERIKTILERI">
-        <h2>«POLYTECH ERIKTILERI» еріктілері клубы</h2>
-        <p>«POLYTECH ERIKTILERI» – колледж студенттерін қоғамдық өмірге белсенді араластыру, еріктілік мәдениетін қалыптастыру және әлеуметтік маңызды жобаларға атсалысу арқылы жауапкершілік пен жанашырлық қасиеттерін дамыту.</p>
-        <p><strong>Жобалар:</strong> Балалар үйлеріне көмек, экологиялық акциялар, қарттарға көмек жобалары.</p>
-    </div>
-</div>
-
-<!-- Модальное окно 4 -->
-<div id="modal4" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal('modal4')">&times;</span>
-        <img class="modal-img" src="/static/images/Logo_club/l4.png" alt="СТУДЕНТТІК КЕҢЕС">
-        <h2>«СТУДЕНТТІК КЕҢЕС»</h2>
-        <p>Студенттер үйіндегі «Студенттік кеңес» – студенттердің бос уақытын ұйымдастыру және жаңа бастамаларына қолдау көрсетіп, өзекті сұрақтарды шешу бойынша бастамашыл өзін-өзі басқару ұйымы.</p>
-        <p><strong>Функциялары:</strong> Студенттік өмірді ұйымдастыру, мәселелерді шешу, әлеуметтік жобаларды іске асыру.</p>
-    </div>
-</div>
-
-<!-- Модальное окно 5 -->
-<div id="modal5" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal('modal5')">&times;</span>
-        <img class="modal-img" src="/static/images/Logo_club/l5.png" alt="KIROSHI">
-        <h2>«KIROSHI»</h2>
-        <p>«KIROSHI» робототехника зертханасы студенттердің инженерлік және техникалық дағдыларын дамытып, инновациялық технологиялар саласындағы әлеуетін ашуға мүмкіндік беретін ынталы әрі талантты студенттерді біріктіреді.</p>
-        <p><strong>Қызметтер:</strong> Робототехника курстары, хакатондар, техникалық жарыстар.</p>
-    </div>
-</div>
-
-<!-- Модальное окно 6 -->
-<div id="modal6" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal('modal6')">&times;</span>
-        <img class="modal-img" src="/static/images/Logo_club/l6.png" alt="ЖАС ҚЫРАН">
-        <h2>«ЖАС ҚЫРАН» ӘПК КЛУБЫ</h2>
-        <p>«Жас қыран» әскери-патриоттық клубы – әскери-патриоттық тәрбие беру іс-шараларын өткізуге бағытталған, студенттердің бірлескен іс-әрекеттегі мүдделерінің ортақтығы негізінде құрылған ерікті бірлестік</p>
-        <p><strong>Іс-шаралар:</strong> Әскери дайындық, патриоттық акциялар, тарихи экскурсиялар.</p>
-    </div>
-</div>
-
-<!-- Модальное окно 7 -->
-<div id="modal7" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal('modal7')">&times;</span>
-        <img class="modal-img" src="/static/images/Logo_club/l7.png" alt="SANALY URPAQ">
-        <h2>«SANALY URPAQ» ЕПК КЛУБЫ</h2>
-        <p>«Sanaly urpaq» ерікті-патриоттық клубы – колледждегі құқықтық білім, сыбайлас жемқорлыққа қарсы мәдениетті насихаттау үшін құрылған студенттердің ерікті бірлестігі.</p>
-        <p><strong>Бағыттар:</strong> Құқықтық сауаттылық, антикоррупциялық білім, заңгерлік қызмет.</p>
-    </div>
-</div>
-
-<!-- Модальное окно 8 -->
-<div id="modal8" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal('modal8')">&times;</span>
-        <img class="modal-img" src="/static/images/Logo_club/l8.png" alt="ҚЫЗ ЕЛДІҢ КӨРКІ">
-        <h2>«ҚЫЗ ЕЛДІҢ КӨРКІ» ҚЫЗДАР КЛУБЫ</h2>
-        <p>«Қыз елдің көркі» қыздар клубы - қыз балаларды ұлттық тұрғыда халқымыздың әдет - ғұрпын, салт - дәстүрін қадірлеу, ұлтжанды, отансүйгіштік сезімдерге баулу, тәрбиелеу.</p>
-        <p><strong>Іс-шаралар:</strong> Ұлттық қолөнер шеберханасы, дәстүрлі мерекелер, әйелдер лидерлігі жобалары.</p>
-    </div>
-</div>
-
-<!-- Модальное окно 9 -->
-<div id="modal9" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal('modal9')">&times;</span>
-        <img class="modal-img" src="/static/images/Logo_club/l9.png" alt="СПОРТТЫҚ ҮЙІРМЕЛЕР">
-        <h2>СПОРТТЫҚ ҮЙІРМЕЛЕР</h2>
-        <p>Студенттердің дене тәрбиесін жетілдіру, салауатты өмір салтын қалыптастыру, спорттық дағдыларын дамыту және бос уақытын тиімді ұйымдастыру. Спорт үйірмелері: футбол, волейбол, баскетбол, тоғызқұмалақ, шахмат, шашки</p>
-        <p><strong>Спорт түрлері:</strong> Командалық ойындар, ақыл ойындары, жеке спорт түрлері.</p>
-    </div>
-</div>
-
-<!-- Модальное окно 10 -->
-<div id="modal10" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal('modal10')">&times;</span>
-        <img class="modal-img" src="/static/images/Logo_club/l10.png" alt="ТІЛДЕР ӘЛЕМІ">
-        <h2>«ТІЛДЕР ӘЛЕМІ»</h2>
-        <p>«Тілдер әлемі» тілдерін үйрету арқылы олардың білім көкжиегін кеңейту, кәсіби және жеке даму мүмкіндіктерін арттыру - 2023-2024 - Ағылшын тілі - ⁠2024-2025 - Түрік тілі</p>
-        <p><strong>Бағдарлама:</strong> Тіл үйрену курстары, мәдениетаралық алмасу, халықаралық сертификаттарға дайындық.</p>
-    </div>
-</div>
-
-<script>
-    // Функция для открытия модального окна
-    function openModal(modalId) {
-        document.getElementById(modalId).style.display = "block";
-        document.body.style.overflow = "hidden"; // Запрет прокрутки фона
-    }
-    
-    // Функция для закрытия модального окна
-    function closeModal(modalId) {
-        document.getElementById(modalId).style.display = "none";
-        document.body.style.overflow = "auto"; // Возврат прокрутки
-    }
-    
-    // Закрытие модального окна при клике вне его
-    window.onclick = function(event) {
-        if (event.target.className === "modal") {
-            event.target.style.display = "none";
+    <script>
+        // Функция для открытия модального окна
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "block";
+            document.body.style.overflow = "hidden";
+        }
+        
+        // Функция для закрытия модального окна
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
             document.body.style.overflow = "auto";
         }
-    }
-    
-    // Закрытие модального окна при нажатии ESC
-    document.onkeydown = function(evt) {
-        evt = evt || window.event;
-        if (evt.keyCode === 27) {
-            var modals = document.getElementsByClassName("modal");
-            for (var i = 0; i < modals.length; i++) {
-                if (modals[i].style.display === "block") {
-                    modals[i].style.display = "none";
-                    document.body.style.overflow = "auto";
-                }
+        
+        // Закрытие модального окна при клике вне его
+        window.onclick = function(event) {
+            if (event.target.className === "modal") {
+                event.target.style.display = "none";
+                document.body.style.overflow = "auto";
             }
         }
-    };
-</script>
+        
+        // Закрытие модального окна при нажатии ESC
+        document.onkeydown = function(evt) {
+            evt = evt || window.event;
+            if (evt.keyCode === 27) {
+                var modals = document.getElementsByClassName("modal");
+                for (var i = 0; i < modals.length; i++) {
+                    if (modals[i].style.display === "block") {
+                        modals[i].style.display = "none";
+                        document.body.style.overflow = "auto";
+                    }
+                }
+            }
+        };
+    </script>
+    
     <script>
-        // Initialize particles.js for cosmic background effect
-        particlesJS('particles-js', {
-            particles: {
-                number: { value: 80, density: { enable: true, value_area: 800 } },
-                color: { value: '#00eaff' },
-                shape: { type: 'circle' },
-                opacity: { value: 0.5, random: true },
-                size: { value: 3, random: true },
-                line_linked: { enable: true, distance: 150, color: '#00eaff', opacity: 0.3, width: 1 },
-                move: { enable: true, speed: 2, direction: 'none', random: false, straight: false, out_mode: 'out', bounce: false }
-            },
-            interactivity: {
-                detect_on: 'canvas',
-                events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' }, resize: true },
-                modes: { repulse: { distance: 100, duration: 0.4 }, push: { particles_nb: 4 } }
-            },
-            retina_detect: true
+        // Initialize particles.js
+        document.addEventListener('DOMContentLoaded', function() {
+            particlesJS('particles-js', {
+                particles: {
+                    number: { 
+                        value: 80, 
+                        density: { 
+                            enable: true, 
+                            value_area: 800 
+                        } 
+                    },
+                    color: { 
+                        value: '#00eaff' 
+                    },
+                    shape: { 
+                        type: 'circle' 
+                    },
+                    opacity: { 
+                        value: 0.5, 
+                        random: true 
+                    },
+                    size: { 
+                        value: 3, 
+                        random: true 
+                    },
+                    line_linked: { 
+                        enable: true, 
+                        distance: 150, 
+                        color: '#00eaff', 
+                        opacity: 0.3, 
+                        width: 1 
+                    },
+                    move: { 
+                        enable: true, 
+                        speed: 2, 
+                        direction: 'none', 
+                        random: false, 
+                        straight: false, 
+                        out_mode: 'out', 
+                        bounce: false 
+                    }
+                },
+                interactivity: {
+                    detect_on: 'canvas',
+                    events: { 
+                        onhover: { 
+                            enable: true, 
+                            mode: 'repulse' 
+                        }, 
+                        onclick: { 
+                            enable: true, 
+                            mode: 'push' 
+                        }, 
+                        resize: true 
+                    },
+                    modes: { 
+                        repulse: { 
+                            distance: 100, 
+                            duration: 0.4 
+                        }, 
+                        push: { 
+                            particles_nb: 4 
+                        } 
+                    }
+                },
+                retina_detect: true
+            });
         });
     </script>
-      <!-- <script src="/static/translations.js"></script>
-      
-      <script src="/static/virtualTour.js"></script>
-      <script src="/static/online_assistant.js"></script>
-      <script src="/static/script.js"></script>
-      <script src="/static/major-body.js"></script>
-      <script src="/static/partners-scroll.js"></script>
-      <script src="/static/header/main.js"></script>
-      <script src="/static/modal-page/js/specialtyPopup.js"></script>
-      <div id="footer-placeholder"></div>
-       -->
-      <script>
-          fetch('/views/footer.html')
-              .then(response => response.text())
-              .then(data => {
-                  document.getElementById('footer-placeholder').innerHTML = data;
-              });
-      </script>
+    
+    <div id="footer-placeholder"></div>
+    <script>
+        fetch('/views/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
 </body>
 </html>

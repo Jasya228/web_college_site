@@ -418,7 +418,7 @@ it_hub_regulation_title: "IT HUB - Положение",
 	dorm_stats_coworking: "1",
 	dorm_stats_coworking_desc: "коворкинг",
 	dorm_stats_tennis: "1",
-	dorm_stats_tennis_desc: "теннис зал",
+	dorm_stats_tennis_desc: "Теннис зал",
 	stud_rule_title: "Документы общежития",
 	stud_rules1: "Правила внутреннего распорядка студенческого дома",
 	stud_rules2: "Список необходимых документов",
@@ -483,7 +483,8 @@ it_hub_regulation_title: "IT HUB - Положение",
 	Libary: "Библиотека",
 	pol_jastar: "Молодежный клуб политех",
 	menu_student_clubs: "Студенческие клубы",
-
+	qurlym: "Структура ",
+	methodological_recommendations_5: "МЕТОДИЧЕСКОЕ РУКОВОДСТВО 1"
 
 
 
@@ -976,6 +977,11 @@ it_hub: "IT HUB",
 	Libary: "Library",
 	pol_jastar: "POLYTECHNIC YOUTHS CLUB",
 	menu_student_clubs: "STUDENT CLUBS",
+	qurlym: "Structure",
+	methodological_recommendations_5: "METHODOLOGICAL GUIDE 1"
+
+
+
 
 
 
@@ -1343,7 +1349,7 @@ feature_students_title: 'Тек студенттер үшін',
 feature_students_text: 'Жатақханада тек колледж студенттері тұрады.',
 feature_location_title: 'Ыңғайлы орналасуы',
 feature_location_text: 'Жатақхана оқу корпустарына жақын.',
-feature_security_title: 'Face id және бейне бақытау ',
+feature_security_title: 'Face ID және бейне бақылау ',
 feature_security_text: 'Күзет және бейнебақылау тәулік бойы жұмыс істейді.',
 feature_fitness_title: 'Коворкинг',
 feature_fitness_text: 'Әртүрлі жаттығу құрылғылары бар заманауи зал.',
@@ -1408,7 +1414,7 @@ upd_forms_title: 'Оқу-өндірістік практика формалар�
 	dorm_stats_coworking: "1",
 	dorm_stats_coworking_desc: "коворкинг",
 	dorm_stats_tennis: "1",
-	dorm_stats_tennis_desc: "тиннес зал",
+	dorm_stats_tennis_desc: "Теннис зал",
 	stud_rule_title: "Жатақхана құжаттары",
 	stud_rules1: "Студенттер үйінің ішкі тәртіп ережесі",
 	stud_rules2: "Қажетті құжаттар тізімі",
@@ -1480,5 +1486,8 @@ upd_forms_title: 'Оқу-өндірістік практика формалар�
     Libary: "Кітапхана",
 	pol_jastar: "Политех жастары",
 	menu_student_clubs: "Студенттік клубтар",
+	qurlym: "Құрлым",
+	methodological_recommendations_5: "ӘДІСТЕМЕЛІК НҰСҚАУЛЫҚ 1"
+
 	},
 }

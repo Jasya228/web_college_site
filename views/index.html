@@ -32,7 +32,7 @@
     // Функция для загрузки и инициализации хедера
     async function loadHeader() {
         try {
-            // Загружаем HTML хедерак
+            // Загружаем HTML хедера
             const response = await fetch('/views/header.html');
             const html = await response.text();
             
@@ -242,6 +242,7 @@
     styleElement.textContent = mobileMenuStyles;
     document.head.appendChild(styleElement);
     </script>
+
     
 
         <section class="hero">
