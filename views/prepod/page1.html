@@ -117,6 +117,77 @@
           fill: currentColor;
         }
 
+        .inner-accordion {
+        margin-top: 10px;
+        }
+
+        .inner-header {
+        background-color: #33ccff;
+        color: #000;
+        padding: 12px 20px;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 12px;
+        box-shadow: 0 0 5px rgba(0, 145, 255, 0.3);
+        transition: background-color 0.3s;
+        font-size: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        }
+
+        .inner-header:hover {
+        background-color: #00aaff;
+        }
+
+        .inner-header .arrow {
+        font-size: 16px;
+        transition: transform 0.3s ease;
+        }
+
+        .inner-header.active .arrow {
+        transform: rotate(180deg);
+        }
+
+        .inner-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        padding-left: 10px;
+        }
+
+        .schedule-header {
+        background-color: #1f1f1f !important;
+        color: #9fdfff !important;
+        font-weight: bold;
+        padding: 12px 20px;
+        border-radius: 0 8px 8px 0;
+        position: relative;
+        margin: 10px 0;
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        }
+
+        .schedule-header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background: #9fdfff ; /* Цвет левой полосы */
+        border-radius: 4px 0 0 4px;
+        }
+
+        .schedule-header:hover {
+        background-color: #03373d !important;
+        }
+
+
+
+
+
+
         /* Адаптивность */
         @media (max-width: 600px) {
           .regulations-section h1 {
@@ -430,54 +501,80 @@
                     
                 <!-- Элемент аккордеона 3 -->
                 <div class="accordion-item">
-                    <div class="accordion-header" data-translate="methodological_recommendations_5">
-                        ӘДІСТЕМЕЛІК НҰСҚАУЛЫҚ 1
-                    </div>
-                    <div class="accordion-content">
-                        <a class="download-btn" target="_blank" href="https://disk.yandex.ru/i/WiF3cbyQ-T4BUQ" download>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path
-                                    d="M5 20h14v-2H5v2zm7-18L5.33 11h3.67v4h6v-4h3.67L12 2z"
-                                />
-                            </svg>
-                            <span data-translate="download_pdf">Скачать PDF</span>
-                        </a>
+  <div class="accordion-header" data-translate="methodological_recommendations_5">
+    ӘДІСТЕМЕЛІК НҰСҚАУЛЫҚ
+  </div>
+  <div class="accordion-content">
+    <a class="download-btn" target="_blank" href="https://disk.yandex.ru/i/WiF3cbyQ-T4BUQ" download>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M5 20h14v-2H5v2zm7-18L5.33 11h3.67v4h6v-4h3.67L12 2z"/>
+      </svg>
+      <span data-translate="download_pdf">Скачать PDF</span>
+    </a>
 
-                        
-                            <div class="sub-accordion">
+    <!-- Вложенный аккордеон -->
+    <div class="inner-accordion">
+      <div class="inner-header schedule-header" data-translate="Development_Courses">
+             Біліктілікті арттыру курстары
+        <span class="arrow">▼</span>
+        </div>
 
-                            <div class="sub-content">
+      <div class="inner-content">
+        <a class="download-btn" href="https://your-link-3.com" target="_blank">Скачать PDF</a>
+      </div>
+    </div>
 
 
-                                
-                                <div class="inner-accordion">
-                                <div class="inner-accordion">
-  <div class="inner-header">Расписание</div>
-  <div class="inner-content" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;">
-    <a class="download-btn" href="https://your-link-3.com" target="_blank">Скачать PDF</a>
+    <div class="inner-accordion">
+      <div class="inner-header schedule-header", data-translate="Development_Courses_2">
+             Нормативтік құжаттардың үлгілері
+        <span class="arrow">▼</span>
+        </div>
+
+      <div class="inner-content">
+        <a class="download-btn" href="https://your-link-3.com" target="_blank">Скачать PDF</a>
+      </div>
+    </div>
+
+
+    <div class="inner-accordion">
+      <div class="inner-header schedule-header", data-translate="Development_Courses_3">
+             Ағымдағы, аралық және қорытынды аттестаттауды өткізудің үлгілік қағидаларын бекіту Ережесі
+        <span class="arrow">▼</span>
+        </div>
+
+      <div class="inner-content">
+        <a class="download-btn" href="https://your-link-3.com" target="_blank">Скачать PDF</a>
+      </div>
+    </div>
+
+
+    <div class="inner-accordion">
+      <div class="inner-header schedule-header", data-translate="Development_Courses_4">
+             Педагогтердің жетістіктері
+        <span class="arrow">▼</span>
+        </div>
+
+      <div class="inner-content">
+        <a class="download-btn" href="https://your-link-3.com" target="_blank">Скачать PDF</a>
+      </div>
+    </div>
+
+
+    <div class="inner-accordion">
+      <div class="inner-header schedule-header", data-translate="Development_Courses_5">
+             Педагогтерді аттестаттау бойынша нормативтік-құқықтыр құжаттар
+        <span class="arrow">▼</span>
+        </div>
+
+      <div class="inner-content">
+        <a class="download-btn" href="https://your-link-3.com" target="_blank">Скачать PDF</a>
+      </div>
+    </div>
+
   </div>
 </div>
 
-                                <div class="inner-content">
-                                    <a class="download-btn" href="https://your-link-3.com" target="_blank">Скачать PDF</a>
-                                </div>
-                                </div>
-
-                                <div class="inner-accordion">
-                                <div class="inner-header">Факультатив</div>
-                                <div class="inner-content">
-                                    <a class="download-btn" href="https://your-link-4.com" target="_blank">Скачать PDF</a>
-                                </div>
-                                </div>
-
-                            </div>
-                            </div>
-
-                    </div>
-
-
-                    
-                </div>
             </div>
 
 
@@ -546,35 +643,40 @@
         <script src="/static/header/main.js"></script>
         <script src="/static/modal-page/js/specialtyPopup.js"></script>
     <script>
-        // JavaScript for Accordion
-        const accordionHeaders = document.querySelectorAll('.accordion-header');
+const accordionHeaders = document.querySelectorAll('.accordion-header');
 
-        accordionHeaders.forEach(header => {
-            header.addEventListener('click', () => {
-                const accordionItem = header.parentElement;
-                const accordionContent = accordionItem.querySelector('.accordion-content');
-                const isActive = header.classList.contains('active');
+accordionHeaders.forEach(header => {
+    header.addEventListener('click', () => {
+        const accordionItem = header.parentElement;
+        const accordionContent = accordionItem.querySelector('.accordion-content');
+        const isActive = header.classList.contains('active');
 
-                // Close all other open accordion items
-                document.querySelectorAll('.accordion-item').forEach(item => {
-                    const content = item.querySelector('.accordion-content');
-                    const head = item.querySelector('.accordion-header');
-                    if (item !== accordionItem && head.classList.contains('active')) {
-                        head.classList.remove('active');
-                        content.style.maxHeight = 0;
-                    }
-                });
-
-                // Toggle the clicked accordion item
-                header.classList.toggle('active');
-                if (isActive) {
-                    accordionContent.style.maxHeight = 0;
-                } else {
-                    accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
-                }
-            });
+        // Закрыть все остальные
+        document.querySelectorAll('.accordion-item').forEach(item => {
+            const content = item.querySelector('.accordion-content');
+            const head = item.querySelector('.accordion-header');
+            if (item !== accordionItem && head.classList.contains('active')) {
+                head.classList.remove('active');
+                content.style.maxHeight = null;
+            }
         });
-    </script>
+
+        if (isActive) {
+            header.classList.remove('active');
+            accordionContent.style.maxHeight = null;
+        } else {
+            header.classList.add('active');
+            accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
+
+            // Пересчёт max-height при анимации вложенного
+            setTimeout(() => {
+                accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
+            }, 350); // через 350ms — после открытия вложенного блока
+        }
+    });
+});
+</script>
+
 
 
 <div id="footer-placeholder" style="margin-top: 200px;"></div> 
@@ -586,6 +688,50 @@
       document.getElementById('footer-placeholder').innerHTML = data;
     });
 </script>
+
+
+<script>
+document.querySelectorAll('.inner-header').forEach(header => {
+  header.addEventListener('click', (e) => {
+    e.stopPropagation(); // Предотвращаем влияние на внешний аккордеон
+    const content = header.nextElementSibling;
+    const isActive = header.classList.contains('active');
+
+    // Закрываем другие inner-accordion
+    document.querySelectorAll('.inner-header').forEach(h => {
+      if (h !== header) {
+        h.classList.remove('active');
+        const c = h.nextElementSibling;
+        if (c) c.style.maxHeight = null;
+      }
+    });
+
+    if (isActive) {
+      header.classList.remove('active');
+      content.style.maxHeight = null;
+    } else {
+      header.classList.add('active');
+      content.style.maxHeight = content.scrollHeight + 'px';
+
+      // 🔄 Пересчёт высоты родительского accordion-content
+      const outerAccordion = header.closest('.accordion-content');
+      if (outerAccordion) {
+        // 1-й пересчёт — сразу после открытия
+        outerAccordion.style.maxHeight = outerAccordion.scrollHeight + 'px';
+
+        // 2-й пересчёт — через 400ms, после завершения анимации вложенного блока
+        setTimeout(() => {
+          outerAccordion.style.maxHeight = outerAccordion.scrollHeight + 'px';
+        }, 400);
+      }
+    }
+  });
+});
+</script>
+
+
+
+
 
 
 </body>
