@@ -517,10 +517,12 @@ it_hub_regulation_title: "IT HUB - Положение",
 	Development_Courses_3: "Правила утверждения типовых правил проведения текущей, промежуточной и итоговой аттестациии",
 	Development_Courses_4: "Достижения педагогов",
 	Development_Courses_5: "Нормативно-правовые документы по аттестации педагогов",
-
-
-
-
+	Semess_1: "1 - семестр",
+	Semess_2: "2 - семестр",
+	Rrasp: "Расписание",
+	Facult: "Факультатив",
+	rasp_check: "Просмотр расписания 1 и 3 курсов",
+	rasp_check2: "Просмотр расписания 2 и 4 курсов"
 
 
 
@@ -1044,15 +1046,14 @@ it_hub: "IT HUB",
 	Development_Courses_3: "Regulations on the Model Procedure for Conducting Current, Interim, and Final Assessments",
 	Development_Courses_4: "Teachers’ Professional Achievements",
 	Development_Courses_5: "Normative and Legal Documents on Teacher Certification",
-
-
-
-
-
-
-
-
-
+	schedule_2024: "Schedule 2024-2025",
+	oku_keste: 'Study schedule',
+	Semess_1: "1 - semester",
+	Semess_2: "2 - semester",
+	Rrasp: "Schedule",
+	Facult: "Optional",
+	rasp_check: "Viewing the schedule of 1st and 3rd courses",
+	rasp_check2: "Viewing the schedule of the 2nd and 4th courses"
 
 
 	},
@@ -1587,8 +1588,13 @@ upd_forms_title: 'Оқу-өндірістік практика формалар�
 	Development_Courses_3: "Ағымдағы, аралық және қорытынды аттестаттауды өткізудің үлгілік қағидаларын бекіту ережесі",
 	Development_Courses_4: "Педагогтердің жетістіктері",
 	Development_Courses_5: "Педагогтерді аттестаттау бойынша нормативтік-құқықтыр құжаттар",
-
-
+    schedule_2024: "2024-2025 Кестесі",
+	Semess_1: "1 - семестр",
+	Semess_2: "2 - семестр",
+	Rrasp: "Кесте",
+	Facult: "Факультатив",
+	rasp_check: "1 және 3 курс кестесін қарау",
+	rasp_check2: "2 және 4 курс кестесін қарау"
 
 
 

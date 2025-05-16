@@ -31,7 +31,7 @@
         button.active {
             background-color: #28a745;
         }
-        iframe {
+        embed {
             width: 80%;
             height: 600px;
             border: 1px solid #ccc;
@@ -46,17 +46,17 @@
         <button onclick="showDocument('ru')" class="lang-btn" data-lang="ru">Русский</button>
         <button onclick="showDocument('kk')" class="lang-btn active" data-lang="kk">Қазақша</button>
     </div>
-    <iframe id="documentFrame" src="/static/document/rule_kz.pdf?toolbar=0"></iframe>
+    <embed id="documentFrame" src="/static/document/rule_kz.pdf#toolbar=0" type="application/pdf">
 
     <script>
         const documents = {
-            ru: '/static/document/rule_ru.pdf?toolbar=0',
-            kk: '/static/document/rule_kz.pdf?toolbar=0'
+            ru: '/static/document/rule_ru.pdf#toolbar=0',
+            kk: '/static/document/rule_kz.pdf#toolbar=0'
         };
 
         function showDocument(lang) {
-            const iframe = document.getElementById('documentFrame');
-            iframe.src = documents[lang];
+            const embed = document.getElementById('documentFrame');
+            embed.src = documents[lang];
 
             // Обновление активной кнопки
             document.querySelectorAll('.lang-btn').forEach(btn => {
