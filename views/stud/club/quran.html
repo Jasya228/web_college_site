@@ -405,7 +405,8 @@
                       Нурмуханбетов Ерлан
                   </h3>
                   <p class="text-gray-300 text-center mt-2">
-                      Руководитель ВПК «Жас Қыран», специалист по тактической подготовке
+                    Преподователь – организатор НВиТП 
+                    руководитель ВПК «Жас қыран»
                   </p>
               </div>
       
@@ -416,7 +417,7 @@
                       Султанбаев Кайрат
                   </h3>
                   <p class="text-gray-300 text-center mt-2">
-                      Инструктор по огневой и строевой подготовке
+                    Преподователь НВиТП 
                   </p>
               </div>
       
@@ -529,5 +530,14 @@
             updateCarousel();
         });
     </script>
+
+       <div id="footer-placeholder"></div>
+       <script>
+           fetch('/views/footer.html')
+               .then(response => response.text())
+               .then(data => {
+                   document.getElementById('footer-placeholder').innerHTML = data;
+               });
+       </script>
 </body>
 </html>
