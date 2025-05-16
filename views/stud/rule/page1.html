@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Документы на трех языках</title>
+    <title>Документы на двух языках</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -41,19 +41,17 @@
     </style>
 </head>
 <body>
-    <h1>Документы на трех языках</h1>
+    <h1>Документы на двух языках</h1>
     <div class="button-container">
-        <button onclick="showDocument('ru')" class="lang-btn active" data-lang="ru">Русский</button>
-        <button onclick="showDocument('kk')" class="lang-btn" data-lang="kk">Қазақша</button>
-        <button onclick="showDocument('en')" class="lang-btn" data-lang="en">English</button>
+        <button onclick="showDocument('ru')" class="lang-btn" data-lang="ru">Русский</button>
+        <button onclick="showDocument('kk')" class="lang-btn active" data-lang="kk">Қазақша</button>
     </div>
-    <iframe id="documentFrame" src="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"></iframe>
+    <iframe id="documentFrame" src="/static/document/rule_kz.pdf?toolbar=0"></iframe>
 
     <script>
         const documents = {
-            ru: '/static/document/rule_ru.pdf',
-            kk: '/static/document/rule_kz.pdf',
-            en: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'
+            ru: '/static/document/rule_ru.pdf?toolbar=0',
+            kk: '/static/document/rule_kz.pdf?toolbar=0'
         };
 
         function showDocument(lang) {
@@ -69,8 +67,8 @@
             });
         }
 
-        // Установить русский язык по умолчанию
-        showDocument('ru');
+        // Установить казахский язык по умолчанию
+        showDocument('kk');
     </script>
 </body>
 </html>
