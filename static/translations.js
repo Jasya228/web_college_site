@@ -522,7 +522,8 @@ it_hub_regulation_title: "IT HUB - Положение",
 	Rrasp: "Расписание",
 	Facult: "Факультатив",
 	rasp_check: "Просмотр расписания 1 и 3 курсов",
-	rasp_check2: "Просмотр расписания 2 и 4 курсов"
+	rasp_check2: "Просмотр расписания 2 и 4 курсов",
+	Direction_of_methodological_work: "Направление методической работы"
 
 
 
@@ -1053,7 +1054,30 @@ it_hub: "IT HUB",
 	Rrasp: "Schedule",
 	Facult: "Optional",
 	rasp_check: "Viewing the schedule of 1st and 3rd courses",
-	rasp_check2: "Viewing the schedule of the 2nd and 4th courses"
+	rasp_check2: "Viewing the schedule of the 2nd and 4th courses",
+	Direction_of_methodological_work: "Direction of methodological work"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 	},
@@ -1594,7 +1618,8 @@ upd_forms_title: 'Оқу-өндірістік практика формалар�
 	Rrasp: "Кесте",
 	Facult: "Факультатив",
 	rasp_check: "1 және 3 курс кестесін қарау",
-	rasp_check2: "2 және 4 курс кестесін қарау"
+	rasp_check2: "2 және 4 курс кестесін қарау",
+	Direction_of_methodological_work: "Әдістемелік жұмыстардың бағыты"
 
 
 
