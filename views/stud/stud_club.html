@@ -6,6 +6,8 @@
     <link rel="icon" href="/static/images/header/icon_site_logo.svg" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;500&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="/static/translations.js"></script>
+    <script src="/static/languageSwitcher.js"></script>
     <title>Студенческие клубы</title>
     <style>
         :root {
@@ -472,168 +474,167 @@
     
     <div class="content-wrapper">
         <div class="club-grid">
-            <!-- Клуб 1 -->
-            <div class="club-card" onclick="window.location.href='/views/stud/jastar.html'">
-                <img class="club-logo floating" src="/static/images/Logo_club/l1.png" alt="POLYTECH JASTARY">
-                <h3>ЖІК «POLYTECH JASTARY» ҰЙЫМЫ</h3>
-                <p>ЖІК «POLYTECH JASTARY» ұйымы - ұйымы талантты, жалынды жастардың басын біріктіріп, шығармашылығын дамытуға көмек көрсетеді.</p>
-            </div>
-            
-            <!-- Клуб 2 -->
-            <div class="club-card" onclick="openModal('modal2')">
-                <img class="club-logo floating" src="/static/images/Logo_club/l2.png" alt="POLYTECH ZIATKERLERI">
-                <h3>«POLYTECH ZIATKERLERI» ИПК клубы</h3>
-                <p>«POLYTECH ZIATKERLERI» интеллектуалды пікірсайыс клубы - бұл толеранттылықты, шешендік шеберлікті, сыни ойлауды және жастардың көшбасшылық қасиеттерін дамытуды жүзеге асыратын студенттердің ерікті бірлестігі.</p>
-            </div>
-            
-            <!-- Клуб 3 -->
-            <div class="club-card" onclick="openModal('modal3')">
-                <img class="club-logo floating" src="/static/images/Logo_club/l3.png" alt="POLYTECH ERIKTILERI">
-                <h3>«POLYTECH ERIKTILERI» еріктілері клубы</h3>
-                <p>«POLYTECH ERIKTILERI» – колледж студенттерін қоғамдық өмірге белсенді араластыру, еріктілік мәдениетін қалыптастыру және әлеуметтік маңызды жобаларға атсалысу арқылы жауапкершілік пен жанашырлық қасиеттерін дамыту.</p>
-            </div>
-            
-            <!-- Клуб 4 -->
-            <div class="club-card" onclick="openModal('modal4')">
-                <img class="club-logo floating" src="/static/images/Logo_club/l4.png" alt="СТУДЕНТТІК КЕҢЕС">
-                <h3>«СТУДЕНТТІК КЕҢЕС»</h3>
-                <p>Студенттер үйіндегі «Студенттік кеңес» – студенттердің бос уақытын ұйымдастыру және жаңа бастамаларына қолдау көрсетіп, өзекті сұрақтарды шешу бойынша бастамашыл өзін-өзі басқару ұйымы.</p>
-            </div>
-            
-            <!-- Клуб 5 -->
-            <div class="club-card" onclick="openModal('modal5')">
-                <img class="club-logo floating" src="/static/images/Logo_club/l6.jpg" alt="KIROSHI">
-                <h3>«KIROSHI»</h3>
-                <p>«KIROSHI» робототехника зертханасы студенттердің инженерлік және техникалық дағдыларын дамытып, инновациялық технологиялар саласындағы әлеуетін ашуға мүмкіндік беретін ынталы әрі талантты студенттерді біріктіреді.</p>
-            </div>
-            
-            <!-- Клуб 6 -->
-            <div class="club-card" onclick="window.location.href='/views/stud/club/quran.html'">
-                <img class="club-logo floating" src="/static/images/Logo_club/l6.png" alt="ЖАС ҚЫРАН">
-                <h3>«ЖАС ҚЫРАН» ӘПК КЛУБЫ</h3>
-                <p>«Жас қыран» әскери-патриоттық клубы – әскери-патриоттық тәрбие беру іс-шараларын өткізуге бағытталған, студенттердің бірлескен іс-әрекеттегі мүдделерінің ортақтығы негізінде құрылған ерікті бірлестік</p>
-            </div>
-            
-            <!-- Клуб 7 -->
-            <div class="club-card" onclick="openModal('modal7')">
-                <img class="club-logo floating" src="/static/images/Logo_club/l7.png" alt="SANALY URPAQ">
-                <h3>«SANALY URPAQ» ЕПК КЛУБЫ</h3>
-                <p>«Sanaly urpaq» ерікті-патриоттық клубы – колледждегі құқықтық білім, сыбайлас жемқорлыққа қарсы мәдениетті насихаттау үшін құрылған студенттердің ерікті бірлестігі.</p>
-            </div>
-            
-            <!-- Клуб 8 -->
-            <div class="club-card" onclick="openModal('modal8')">
-                <img class="club-logo floating" src="/static/images/Logo_club/l8.png" alt="ҚЫЗ ЕЛДІҢ КӨРКІ">
-                <h3>«ҚЫЗ ЕЛДІҢ КӨРКІ» ҚЫЗДАР КЛУБЫ</h3>
-                <p>«Қыз елдің көркі» қыздар клубы - қыз балаларды ұлттық тұрғыда халқымыздың әдет - ғұрпын, салт - дәстүрін қадірлеу, ұлтжанды, отансүйгіштік сезімдерге баулу, тәрбиелеу.</p>
-            </div>
-            
-            <!-- Клуб 9 -->
-            <div class="club-card" onclick="window.location.href='/views/stud/club/sport.html'">
-                <img class="club-logo floating" src="/static/images/Logo_club/l9.png" alt="СПОРТТЫҚ ҮЙІРМЕЛЕР">
-                <h3>СПОРТТЫҚ ҮЙІРМЕЛЕР</h3>
-                <p>Студенттердің дене тәрбиесін жетілдіру, салауатты өмір салтын қалыптастыру, спорттық дағдыларын дамыту және бос уақытын тиімді ұйымдастыру. Спорт үйірмелері: футбол, волейбол, баскетбол, тоғызқұмалақ, шахмат, шашки</p>
-            </div>
-            
-            <!-- Клуб 10 -->
-            <div class="club-card" onclick="openModal('modal10')">
-                <img class="club-logo floating" src="/static/images/Logo_club/l10.png" alt="ТІЛДЕР ӘЛЕМІ">
-                <h3>«ТІЛДЕР ӘЛЕМІ»</h3>
-                <p>«Тілдер әлемі» тілдерін үйрету арқылы олардың білім көкжиегін кеңейту, кәсіби және жеке даму мүмкіндіктерін арттыру - 2023-2024 - Ағылшын тілі - ⁠2024-2025 - Түрік тілі</p>
-            </div>
-        </div>
-    </div>
+  <!-- Клуб 1 -->
+<div class="club-card" onclick="window.location.href='/views/stud/jastar.html'">
+    <img class="club-logo floating" src="/static/images/Logo_club/l1.png" alt="POLYTECH JASTARY">
+    <h3 data-translate="club_1_title">ЖІК «POLYTECH JASTARY» ҰЙЫМЫ</h3>
+    <p data-translate="club_1_text">ЖІК «POLYTECH JASTARY» ұйымы - ұйымы талантты, жалынды жастардың басын біріктіріп, шығармашылығын дамытуға көмек көрсетеді.</p>
+</div>
+
+<!-- Клуб 2 -->
+<div class="club-card" onclick="openModal('modal2')">
+    <img class="club-logo floating" src="/static/images/Logo_club/l2.png" alt="POLYTECH ZIATKERLERI">
+    <h3 data-translate="club_2_title">«POLYTECH ZIATKERLERI» ИПК клубы</h3>
+    <p data-translate="club_2_text">«POLYTECH ZIATKERLERI» интеллектуалды пікірсайыс клубы - бұл толеранттылықты, шешендік шеберлікті, сыни ойлауды және жастардың көшбасшылық қасиеттерін дамытуды жүзеге асыратын студенттердің ерікті бірлестігі.</p>
+</div>
+
+<!-- Клуб 3 -->
+<div class="club-card" onclick="openModal('modal3')">
+    <img class="club-logo floating" src="/static/images/Logo_club/l3.png" alt="POLYTECH ERIKTILERI">
+    <h3 data-translate="club_3_title">«POLYTECH ERIKTILERI» еріктілері клубы</h3>
+    <p data-translate="club_3_text">«POLYTECH ERIKTILERI» – колледж студенттерін қоғамдық өмірге белсенді араластыру, еріктілік мәдениетін қалыптастыру және әлеуметтік маңызды жобаларға атсалысу арқылы жауапкершілік пен жанашырлық қасиеттерін дамыту.</p>
+</div>
+
+<!-- Клуб 4 -->
+<div class="club-card" onclick="openModal('modal4')">
+    <img class="club-logo floating" src="/static/images/Logo_club/l4.png" alt="СТУДЕНТТІК КЕҢЕС">
+    <h3 data-translate="club_4_title">«СТУДЕНТТІК КЕҢЕС»</h3>
+    <p data-translate="club_4_text">Студенттер үйіндегі «Студенттік кеңес» – студенттердің бос уақытын ұйымдастыру және жаңа бастамаларына қолдау көрсетіп, өзекті сұрақтарды шешу бойынша бастамашыл өзін-өзі басқару ұйымы.</p>
+</div>
+
+<!-- Клуб 5 -->
+<div class="club-card" onclick="openModal('modal5')">
+    <img class="club-logo floating" src="/static/images/Logo_club/l6.jpg" alt="KIROSHI">
+    <h3 data-translate="club_5_title">«KIROSHI»</h3>
+    <p data-translate="club_5_text">«KIROSHI» робототехника зертханасы студенттердің инженерлік және техникалық дағдыларын дамытып, инновациялық технологиялар саласындағы әлеуетін ашуға мүмкіндік беретін ынталы әрі талантты студенттерді біріктіреді.</p>
+</div>
+
+<!-- Клуб 6 -->
+<div class="club-card" onclick="window.location.href='/views/stud/club/quran.html'">
+    <img class="club-logo floating" src="/static/images/Logo_club/l6.png" alt="ЖАС ҚЫРАН">
+    <h3 data-translate="club_6_title">«ЖАС ҚЫРАН» ӘПК КЛУБЫ</h3>
+    <p data-translate="club_6_text">«Жас қыран» әскери-патриоттық клубы – әскери-патриоттық тәрбие беру іс-шараларын өткізуге бағытталған, студенттердің бірлескен іс-әрекеттегі мүдделерінің ортақтығы негізінде құрылған ерікті бірлестік</p>
+</div>
+
+<!-- Клуб 7 -->
+<div class="club-card" onclick="openModal('modal7')">
+    <img class="club-logo floating" src="/static/images/Logo_club/l7.png" alt="SANALY URPAQ">
+    <h3 data-translate="club_7_title">«SANALY URPAQ» ЕПК КЛУБЫ</h3>
+    <p data-translate="club_7_text">«Sanaly urpaq» ерікті-патриоттық клубы – колледждегі құқықтық білім, сыбайлас жемқорлыққа қарсы мәдениетті насихаттау үшін құрылған студенттердің ерікті бірлестігі.</p>
+</div>
+
+<!-- Клуб 8 -->
+<div class="club-card" onclick="openModal('modal8')">
+    <img class="club-logo floating" src="/static/images/Logo_club/l8.png" alt="ҚЫЗ ЕЛДІҢ КӨРКІ">
+    <h3 data-translate="club_8_title">«ҚЫЗ ЕЛДІҢ КӨРКІ» ҚЫЗДАР КЛУБЫ</h3>
+    <p data-translate="club_8_text">«Қыз елдің көркі» қыздар клубы - қыз балаларды ұлттық тұрғыда халқымыздың әдет - ғұрпын, салт - дәстүрін қадірлеу, ұлтжанды, отансүйгіштік сезімдерге баулу, тәрбиелеу.</p>
+</div>
+
+<!-- Клуб 9 -->
+<div class="club-card" onclick="window.location.href='/views/stud/club/sport.html'">
+    <img class="club-logo floating" src="/static/images/Logo_club/l9.png" alt="СПОРТТЫҚ ҮЙІРМЕЛЕР">
+    <h3 data-translate="club_9_title">СПОРТТЫҚ ҮЙІРМЕЛЕР</h3>
+    <p data-translate="club_9_text">Студенттердің дене тәрбиесін жетілдіру, салауатты өмір салтын қалыптастыру, спорттық дағдыларын дамыту және бос уақытын тиімді ұйымдастыру. Спорт үйірмелері: футбол, волейбол, баскетбол, тоғызқұмалақ, шахмат, шашки</p>
+</div>
+
+<!-- Клуб 10 -->
+<div class="club-card" onclick="openModal('modal10')">
+    <img class="club-logo floating" src="/static/images/Logo_club/l10.png" alt="ТІЛДЕР ӘЛЕМІ">
+    <h3 data-translate="club_10_title">«ТІЛДЕР ӘЛЕМІ»</h3>
+    <p data-translate="club_10_text">«Тілдер әлемі» тілдерін үйрету арқылы олардың білім көкжиегін кеңейту, кәсіби және жеке даму мүмкіндіктерін арттыру - 2023-2024 - Ағылшын тілі - ⁠2024-2025 - Түрік тілі</p>
+</div>
 
     <!-- Модальные окна -->
-    <div id="modal2" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modal2')">&times;</span>
-            <img class="modal-img" src="/static/images/Logo_club/l2.png" alt="POLYTECH ZIATKERLERI">
-            <h2>«POLYTECH ZIATKERLERI» ИПК клубы</h2>
-            <p>«POLYTECH ZIATKERLERI» интеллектуалды пікірсайыс клубы - бұл толеранттылықты, шешендік шеберлікті, сыни ойлауды және жастардың көшбасшылық қасиеттерін дамытуды жүзеге асыратын студенттердің ерікті бірлестігі.</p>
-            <p><strong>Негізгі қызметтер:</strong> Ай сайын пікірсайыс турнирлері, оқу семинарлары, қоғамдық пікірталастар.</p>
-        </div>
+<div id="modal2" class="modal" data-translate-title="club_2_title" data-translate-text="club_2_text">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal2')">&times;</span>
+        <img class="modal-img" src="/static/images/Logo_club/l2.png" alt="POLYTECH ZIATKERLERI" data-translate-alt="club_2_title">
+        <h2 data-translate="club_2_title">«POLYTECH ZIATKERLERI» ИПК клубы</h2>
+        <p data-translate="club_2_text">«POLYTECH ZIATKERLERI» интеллектуалды пікірсайыс клубы - бұл толеранттылықты, шешендік шеберлікті, сыни ойлауды және жастардың көшбасшылық қасиеттерін дамытуды жүзеге асыратын студенттердің ерікті бірлестігі.</p>
+        <p><strong>Негізгі қызметтер:</strong> Ай сайын пікірсайыс турнирлері, оқу семинарлары, қоғамдық пікірталастар.</p>
     </div>
+</div>
 
-    <div id="modal3" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modal3')">&times;</span>
-            <img class="modal-img" src="/static/images/Logo_club/l3.png" alt="POLYTECH ERIKTILERI">
-            <h2>«POLYTECH ERIKTILERI» еріктілері клубы</h2>
-            <p>«POLYTECH ERIKTILERI» – колледж студенттерін қоғамдық өмірге белсенді араластыру, еріктілік мәдениетін қалыптастыру және әлеуметтік маңызды жобаларға атсалысу арқылы жауапкершілік пен жанашырлық қасиеттерін дамыту.</p>
-            <p><strong>Жобалар:</strong> Балалар үйлеріне көмек, экологиялық акциялар, қарттарға көмек жобалары.</p>
-        </div>
+<div id="modal3" class="modal" data-translate-title="club_3_title" data-translate-text="club_3_text">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal3')">&times;</span>
+        <img class="modal-img" src="/static/images/Logo_club/l3.png" alt="POLYTECH ERIKTILERI" data-translate-alt="club_3_title">
+        <h2 data-translate="club_3_title">«POLYTECH ERIKTILERI» еріктілері клубы</h2>
+        <p data-translate="club_3_text">«POLYTECH ERIKTILERI» – колледж студенттерін қоғамдық өмірге белсенді араластыру, еріктілік мәдениетін қалыптастыру және әлеуметтік маңызды жобаларға атсалысу арқылы жауапкершілік пен жанашырлық қасиеттерін дамыту.</p>
+        <p><strong>Жобалар:</strong> Балалар үйлеріне көмек, экологиялық акциялар, қарттарға көмек жобалары.</p>
     </div>
+</div>
 
-    <div id="modal4" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modal4')">&times;</span>
-            <img class="modal-img" src="/static/images/Logo_club/l4.png" alt="СТУДЕНТТІК КЕҢЕС">
-            <h2>«СТУДЕНТТІК КЕҢЕС»</h2>
-            <p>Студенттер үйіндегі «Студенттік кеңес» – студенттердің бос уақытын ұйымдастыру және жаңа бастамаларына қолдау көрсетіп, өзекті сұрақтарды шешу бойынша бастамашыл өзін-өзі басқару ұйымы.</p>
-            <p><strong>Функциялары:</strong> Студенттік өмірді ұйымдастыру, мәселелерді шешу, әлеуметтік жобаларды іске асыру.</p>
-        </div>
+<div id="modal4" class="modal" data-translate-title="club_4_title" data-translate-text="club_4_text">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal4')">&times;</span>
+        <img class="modal-img" src="/static/images/Logo_club/l4.png" alt="СТУДЕНТТІК КЕҢЕС" data-translate-alt="club_4_title">
+        <h2 data-translate="club_4_title">«СТУДЕНТТІК КЕҢЕС»</h2>
+        <p data-translate="club_4_text">Студенттер үйіндегі «Студенттік кеңес» – студенттердің бос уақытын ұйымдастыру және жаңа бастамаларына қолдау көрсетіп, өзекті сұрақтарды шешу бойынша бастамашыл өзін-өзі басқару ұйымы.</p>
+        <p><strong>Функциялары:</strong> Студенттік өмірді ұйымдастыру, мәселелерді шешу, әлеуметтік жобаларды іске асыру.</p>
     </div>
+</div>
 
-    <div id="modal5" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modal5')">&times;</span>
-            <img class="modal-img" src="/static/images/Logo_club/l5.png" alt="KIROSHI">
-            <h2>«KIROSHI»</h2>
-            <p>«KIROSHI» робототехника зертханасы студенттердің инженерлік және техникалық дағдыларын дамытып, инновациялық технологиялар саласындағы әлеуетін ашуға мүмкіндік беретін ынталы әрі талантты студенттерді біріктіреді.</p>
-            <p><strong>Қызметтер:</strong> Робототехника курстары, хакатондар, техникалық жарыстар.</p>
-        </div>
+<div id="modal5" class="modal" data-translate-title="club_5_title" data-translate-text="club_5_text">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal5')">&times;</span>
+        <img class="modal-img" src="/static/images/Logo_club/l5.png" alt="KIROSHI" data-translate-alt="club_5_title">
+        <h2 data-translate="club_5_title">«KIROSHI»</h2>
+        <p data-translate="club_5_text">«KIROSHI» робототехника зертханасы студенттердің инженерлік және техникалық дағдыларын дамытып, инновациялық технологиялар саласындағы әлеуетін ашуға мүмкіндік беретін ынталы әрі талантты студенттерді біріктіреді.</p>
+        <p><strong>Қызметтер:</strong> Робототехника курстары, хакатондар, техникалық жарыстар.</p>
     </div>
+</div>
 
-    <div id="modal6" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modal6')">&times;</span>
-            <img class="modal-img" src="/static/images/Logo_club/l6.png" alt="ЖАС ҚЫРАН">
-            <h2>«ЖАС ҚЫРАН» ӘПК КЛУБЫ</h2>
-            <p>«Жас қыран» әскери-патриоттық клубы – әскери-патриоттық тәрбие беру іс-шараларын өткізуге бағытталған, студенттердің бірлескен іс-әрекеттегі мүдделерінің ортақтығы негізінде құрылған ерікті бірлестік</p>
-            <p><strong>Іс-шаралар:</strong> Әскери дайындық, патриоттық акциялар, тарихи экскурсиялар.</p>
-        </div>
+<div id="modal6" class="modal" data-translate-title="club_6_title" data-translate-text="club_6_text">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal6')">&times;</span>
+        <img class="modal-img" src="/static/images/Logo_club/l6.png" alt="ЖАС ҚЫРАН" data-translate-alt="club_6_title">
+        <h2 data-translate="club_6_title">«ЖАС ҚЫРАН» ӘПК КЛУБЫ</h2>
+        <p data-translate="club_6_text">«Жас қыран» әскери-патриоттық клубы – әскери-патриоттық тәрбие беру іс-шараларын өткізуге бағытталған, студенттердің бірлескен іс-әрекеттегі мүдделерінің ортақтығы негізінде құрылған ерікті бірлестік</p>
+        <p><strong>Іс-шаралар:</strong> Әскери дайындық, патриоттық акциялар, тарихи экскурсиялар.</p>
     </div>
+</div>
 
-    <div id="modal7" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modal7')">&times;</span>
-            <img class="modal-img" src="/static/images/Logo_club/l7.png" alt="SANALY URPAQ">
-            <h2>«SANALY URPAQ» ЕПК КЛУБЫ</h2>
-            <p>«Sanaly urpaq» ерікті-патриоттық клубы – колледждегі құқықтық білім, сыбайлас жемқорлыққа қарсы мәдениетті насихаттау үшін құрылған студенттердің ерікті бірлестігі.</p>
-            <p><strong>Бағыттар:</strong> Құқықтық сауаттылық, антикоррупциялық білім, заңгерлік қызмет.</p>
-        </div>
+<div id="modal7" class="modal" data-translate-title="club_7_title" data-translate-text="club_7_text">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal7')">&times;</span>
+        <img class="modal-img" src="/static/images/Logo_club/l7.png" alt="SANALY URPAQ" data-translate-alt="club_7_title">
+        <h2 data-translate="club_7_title">«SANALY URPAQ» ЕПК КЛУБЫ</h2>
+        <p data-translate="club_7_text">«Sanaly urpaq» ерікті-патриоттық клубы – колледждегі құқықтық білім, сыбайлас жемқорлыққа қарсы мәдениетті насихаттау үшін құрылған студенттердің ерікті бірлестігі.</p>
+        <p><strong>Бағыттар:</strong> Құқықтық сауаттылық, антикоррупциялық білім, заңгерлік қызмет.</p>
     </div>
+</div>
 
-    <div id="modal8" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modal8')">&times;</span>
-            <img class="modal-img" src="/static/images/Logo_club/l8.png" alt="ҚЫЗ ЕЛДІҢ КӨРКІ">
-            <h2>«ҚЫЗ ЕЛДІҢ КӨРКІ» ҚЫЗДАР КЛУБЫ</h2>
-            <p>«Қыз елдің көркі» қыздар клубы - қыз балаларды ұлттық тұрғыда халқымыздың әдет - ғұрпын, салт - дәстүрін қадірлеу, ұлтжанды, отансүйгіштік сезімдерге баулу, тәрбиелеу.</p>
-            <p><strong>Іс-шаралар:</strong> Ұлттық қолөнер шеберханасы, дәстүрлі мерекелер, әйелдер лидерлігі жобалары.</p>
-        </div>
+<div id="modal8" class="modal" data-translate-title="club_8_title" data-translate-text="club_8_text">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal8')">&times;</span>
+        <img class="modal-img" src="/static/images/Logo_club/l8.png" alt="ҚЫЗ ЕЛДІҢ КӨРКІ" data-translate-alt="club_8_title">
+        <h2 data-translate="club_8_title">«ҚЫЗ ЕЛДІҢ КӨРКІ» ҚЫЗДАР КЛУБЫ</h2>
+        <p data-translate="club_8_text">«Қыз елдің көркі» қыздар клубы - қыз балаларды ұлттық тұрғыда халқымыздың әдет - ғұрпын, салт - дәстүрін қадірлеу, ұлтжанды, отансүйгіштік сезімдерге баулу, тәрбиелеу.</p>
+        <p><strong>Іс-шаралар:</strong> Ұлттық қолөнер шеберханасы, дәстүрлі мерекелер, әйелдер лидерлігі жобалары.</p>
     </div>
+</div>
 
-    <div id="modal9" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modal9')">&times;</span>
-            <img class="modal-img" src="/static/images/Logo_club/l9.png" alt="СПОРТТЫҚ ҮЙІРМЕЛЕР">
-            <h2>СПОРТТЫҚ ҮЙІРМЕЛЕР</h2>
-            <p>Студенттердің дене тәрбиесін жетілдіру, салауатты өмір салтын қалыптастыру, спорттық дағдыларын дамыту және бос уақытын тиімді ұйымдастыру. Спорт үйірмелері: футбол, волейбол, баскетбол, тоғызқұмалақ, шахмат, шашки</p>
-            <p><strong>Спорт түрлері:</strong> Командалық ойындар, ақыл ойындары, жеке спорт түрлері.</p>
-        </div>
+<div id="modal9" class="modal" data-translate-title="club_9_title" data-translate-text="club_9_text">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal9')">&times;</span>
+        <img class="modal-img" src="/static/images/Logo_club/l9.png" alt="СПОРТТЫҚ ҮЙІРМЕЛЕР" data-translate-alt="club_9_title">
+        <h2 data-translate="club_9_title">СПОРТТЫҚ ҮЙІРМЕЛЕР</h2>
+        <p data-translate="club_9_text">Студенттердің дене тәрбиесін жетілдіру, салауатты өмір салтын қалыптастыру, спорттық дағдыларын дамыту және бос уақытын тиімді ұйымдастыру. Спорт үйірмелері: футбол, волейбол, баскетбол, тоғызқұмалақ, шахмат, шашки</p>
+        <p><strong>Спорт түрлері:</strong> Командалық ойындар, ақыл ойындары, жеке спорт түрлері.</p>
     </div>
+</div>
 
-    <div id="modal10" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modal10')">&times;</span>
-            <img class="modal-img" src="/static/images/Logo_club/l10.png" alt="ТІЛДЕР ӘЛЕМІ">
-            <h2>«ТІЛДЕР ӘЛЕМІ»</h2>
-            <p>«Тілдер әлемі» тілдерін үйрету арқылы олардың білім көкжиегін кеңейту, кәсіби және жеке даму мүмкіндіктерін арттыру - 2023-2024 - Ағылшын тілі - ⁠2024-2025 - Түрік тілі</p>
-            <p><strong>Бағдарлама:</strong> Тіл үйрену курстары, мәдениетаралық алмасу, халықаралық сертификаттарға дайындық.</p>
-        </div>
+<div id="modal10" class="modal" data-translate-title="club_10_title" data-translate-text="club_10_text">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal10')">&times;</span>
+        <img class="modal-img" src="/static/images/Logo_club/l10.png" alt="ТІЛДЕР ӘЛЕМІ" data-translate-alt="club_10_title">
+        <h2 data-translate="club_10_title">«ТІЛДЕР ӘЛЕМІ»</h2>
+        <p data-translate="club_10_text">«Тілдер әлемі» тілдерін үйрету арқылы олардың білім көкжиегін кеңейту, кәсіби және жеке даму мүмкіндіктерін арттыру - 2023-2024 - Ағылшын тілі - ⁠2024-2025 - Түрік тілі</p>
+        <p><strong>Бағдарлама:</strong> Тіл үйрену курстары, мәдениетаралық алмасу, халықаралық сертификаттарға дайындық.</p>
     </div>
+</div>
+
 
     <script>
         // Функция для открытия модального окна
