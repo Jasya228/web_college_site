@@ -47,58 +47,6 @@
   margin-bottom: 30px;
 }
 
-.accordion {
-  width: 100%;
-}
-
-.accordion-item {
-  background-color: #1b1b1b;
-  border-radius: 8px;
-  margin-bottom: 15px;
-  overflow: hidden;
-  box-shadow: 0 0 10px rgba(0, 145, 255, 0.15);
-}
-
-.accordion-header {
-  padding: 20px 24px;
-  cursor: pointer;
-  position: relative;
-  font-size: 18px;
-  font-weight: 600;
-  color: #9fdfff;
-  background-color: #1f1f1f;
-  transition: background-color 0.3s;
-}
-
-.accordion-header:hover {
-  background-color: #22222200;
-}
-
-.accordion-header::after {
-  content: "▼";
-  position: absolute;
-  right: 20px;
-  transition: transform 0.3s;
-}
-
-.accordion-header.active::after {
-  transform: rotate(180deg);
-}
-
-.accordion-content {
-  max-height: 0;
-  overflow: hidden;
-  background-color: #12121200;
-  padding: 0 20px;
-  transition: max-height 0.3s ease;
-}
-
-.accordion-content p {
-  margin: 15px 0 10px;
-  font-size: 14px;
-  color: #cdeeff;
-}
-
 .download-btn {
   display: inline-flex;
   align-items: center;
@@ -132,20 +80,41 @@
     font-size: 1.3em;
   }
 
-  .accordion-header {
-    font-size: 15px;
-    padding: 14px 16px;
-  }
-
-  .accordion-content p {
-    font-size: 13px;
-  }
-
   .download-btn {
     font-size: 13px;
     padding: 8px 12px;
   }
 }
+
+
+.download-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #33ccff;
+  color: #000;
+  padding: 12px 15px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  font-size: 14px;
+  width: 100%; /* кнопка занимает всю ширину формы */
+  max-width: 600px; /* ограничим максимальную ширину */
+  box-sizing: border-box;
+}
+
+.regulations-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+
 
 
   </style>
@@ -373,83 +342,89 @@
 
   <!-- Секция "Положения колледжа" -->
 <div class="regulations-section">
-    <div class="content-wrapper">
-        <h1 data-translate="regulations_title">Положения, регламентирующие основные виды деятельности колледжа</h1>
+  <div class="content-wrapper">
+    <h1 data-translate="regulations_title">Положения, регламентирующие основные виды деятельности колледжа</h1>
 
-    <div class="accordion">
-      <!-- Элемент аккордеона 1 -->
-      <div class="accordion-item">
-        <div class="accordion-header" data-translate="regulation_training">
-          Положение об организации и проведении производственного обучения
-        </div>
-        <div class="accordion-content">
-          <p data-translate="regulation_training_desc">
-            Документ описывает порядок организации производственного обучения студентов.
-          </p>
-          <a class="download-btn" href="docs/proizvodstvennoe-obuchenie.pdf" download>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-              <path d="M5 20h14v-2H5v2zm7-18L5.33 11h3.67v4h6v-4h3.67L12 2z"/>
-            </svg>
-            <span data-translate="download_pdf">Скачать PDF</span>
-          </a>
-        </div>
-      </div>
+    <div class="regulations-form">
+  <a class="download-btn" href="/views/college/otdelenie/page1.html" target="_blank" data-translate="otdelenie_1">
+    Бағдарламалық қамтамасыз ету және ақпараттық қауіпсіздік жүйелері
+  </a>
 
-      <!-- Элемент аккордеона 2 -->
-      <div class="accordion-item">
-        <div class="accordion-header" data-translate="regulation_board">
-          Положение о попечительском совете
-        </div>
-        <div class="accordion-content">
-          <p data-translate="regulation_board_desc">
-            Положение определяет состав, цели и функции попечительского совета колледжа.
-          </p>
-          <a class="download-btn" href="docs/popechitelskiy-sovet.pdf" download>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-              <path d="M5 20h14v-2H5v2zm7-18L5.33 11h3.67v4h6v-4h3.67L12 2z"/>
-            </svg>
-            <span data-translate="download_pdf">Скачать PDF</span>
-          </a>
-        </div>
-      </div>
 
-      <!-- Элемент аккордеона 3 -->
-      <div class="accordion-item">
-        <div class="accordion-header" data-translate="regulation_laboratory">
-          Положение об учебном кабинете и лаборатории
-        </div>
-        <div class="accordion-content">
-          <p data-translate="regulation_laboratory_desc">
-            Документ регламентирует оборудование, безопасность и использование лабораторий.
-          </p>
-          <a class="download-btn" href="docs/laboratoriya.pdf" download>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-              <path d="M5 20h14v-2H5v2zm7-18L5.33 11h3.67v4h6v-4h3.67L12 2z"/>
-            </svg>
-            <span data-translate="download_pdf">Скачать PDF</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
+</div>
+
   </div>
-  
-  <!-- JS для аккордеона -->
-  <script>
-    const headers = document.querySelectorAll('.accordion-header');
-    headers.forEach(header => {
-      header.addEventListener('click', () => {
-        const content = header.nextElementSibling;
-        header.classList.toggle('active');
-        if (content.style.maxHeight) {
-          content.style.maxHeight = null;
-        } else {
-          content.style.maxHeight = content.scrollHeight + "px";
-        }
-      });
-    });
-  </script>
-  
+</div>
+
+
+
+<footer class="footer">
+            <div class="footer-container">
+              <!-- О сайте -->
+              <div class="footer-section">
+                <h3 data-translate="about_site">Сайт туралы</h3>
+                <p id="copyright-year"></p>
+                <script>
+                  const currentYear = new Date().getFullYear();
+                  document.getElementById("copyright-year").textContent = `©1940–${currentYear}`;
+                </script>
+                <p data-translate="college_name">
+                  Алматы қаласы Білім басқармасының «ALMATY POLYTECHNIC COLLEGE» КМҚК
+                </p>
+          
+                <h3 data-translate="social_networks">Әлеуметтік желілер</h3>
+                <div class="social-icons">
+                  <a href="https://www.instagram.com/polytechalmaty/#" target="_blank" aria-label="Instagram">
+                    <img src="/static/images/flot/instagram.png" alt="Instagram" />
+                  </a>
+                  <a href="https://www.facebook.com/people/..." target="_blank" aria-label="Facebook">
+                    <img src="/static/images/flot/facebook.png" alt="Facebook" />
+                  </a>
+                  <a href="https://www.youtube.com/@almatypolytechedukz" target="_blank" aria-label="YouTube">
+                    <img src="/static/images/flot/youtube.png" alt="YouTube" />
+                  </a>
+                  <a href="https://www.tiktok.com/@polytech_college?_t=8ji5qQRP3v3&_r=1" target="_blank" aria-label="TikTok">
+                    <img src="/static/images/flot/tiktok.png" alt="TikTok" />
+                  </a>
+                </div>
+              </div>
+          
+              <!-- Контакты -->
+              <div class="footer-section">
+                <h3 data-translate="contact_label">Байланыс</h3>
+                <p>
+                  <span class="icon">📍</span>
+                  <strong data-translate="address_label">Мекенжай:</strong><br />
+                  <span data-translate="address">Қазақстан, Алматы қ., Тастақ-1 шағын ауданы, 1B</span>
+                </p>
+                <p>
+                  <span class="icon">📞</span>
+                  <strong data-translate="contact_label">Байланыс:</strong><br />
+                  <span data-translate="phone">Тел.: 229 18 32/span><br />
+                  <span data-translate="admission_phone">Қабылдау комиссиясы: 8 707 171 0800</span>
+                </p>
+                <p>
+                  <span class="icon">✉️</span>
+                  <strong data-translate="email_label">Пошта:</strong><br />
+                  <a href="mailto:polytech@aspc.kz">polytech@aspc.kz</a>
+                </p>
+              </div>
+          
+              <!-- Разработчики -->
+              <div class="footer-section">
+                <h3 data-translate="developers">Разработчики сайта</h3>
+                <p>
+                  <span class="icon">👨‍💻</span>
+                  <strong data-translate="developer_name">Жобаны жасаған:</strong><br />
+                  <span data-translate="developer_info">Колледж студенттері мен оқытушылары</span>
+                </p>
+                
+                <a href="https://t.me/CollegeSupportBot "class="dev-button" data-translate="contact_developer" target="_blank" >Связаться с разработчиком</a>
+              </div>
+            </div>
+          </footer>
+
+
   <script src="/static/translations.js"></script>
   <script src="/static/languageSwitcher.js"></script>
   <script src="/static/virtualTour.js"></script>
@@ -462,70 +437,5 @@
   <!-- <script src="/static/yearUpdater.js"></script> -->
   <script src="/static/modal-page/js/specialtyPopup.js"></script>
 </body>
-<footer class="footer">
-    <div class="footer-container">
-      <!-- О сайте -->
-      <div class="footer-section">
-        <h3 data-translate="about_site">Сайт туралы</h3>
-        <p id="copyright-year"></p>
-        <script>
-          const currentYear = new Date().getFullYear();
-          document.getElementById("copyright-year").textContent = `©1940–${currentYear}`;
-        </script>
-        <p data-translate="college_name">
-          Алматы қаласы Білім басқармасының «ALMATY POLYTECHNIC COLLEGE» КМҚК
-        </p>
-  
-        <h3 data-translate="social_networks">Әлеуметтік желілер</h3>
-        <div class="social-icons">
-          <a href="https://www.instagram.com/polytechalmaty/#" target="_blank" aria-label="Instagram">
-            <img src="/static/images/flot/instagram.png" alt="Instagram" />
-          </a>
-          <a href="https://www.facebook.com/people/..." target="_blank" aria-label="Facebook">
-            <img src="/static/images/flot/facebook.png" alt="Facebook" />
-          </a>
-          <a href="https://www.youtube.com/@almatypolytechedukz" target="_blank" aria-label="YouTube">
-            <img src="/static/images/flot/youtube.png" alt="YouTube" />
-          </a>
-          <a href="https://www.tiktok.com/@polytech_college?_t=8ji5qQRP3v3&_r=1" target="_blank" aria-label="TikTok">
-            <img src="/static/images/flot/tiktok.png" alt="TikTok" />
-          </a>
-        </div>
-      </div>
-  
-      <!-- Контакты -->
-      <div class="footer-section">
-        <h3 data-translate="contact_label">Байланыс</h3>
-        <p>
-          <span class="icon">📍</span>
-          <strong data-translate="address_label">Мекенжай:</strong><br />
-          <span data-translate="address">Қазақстан, Алматы қ., Тастақ-1 шағын ауданы, 1B</span>
-        </p>
-        <p>
-          <span class="icon">📞</span>
-          <strong data-translate="contact_label">Байланыс:</strong><br />
-          <span data-translate="phone">Тел.: 396 71 39</span><br />
-          <span data-translate="admission_phone">Қабылдау комиссиясы: 8 707 171 0800</span>
-        </p>
-        <p>
-          <span class="icon">✉️</span>
-          <strong data-translate="email_label">Пошта:</strong><br />
-          <a href="mailto:polytech@aspc.kz">polytech@aspc.kz</a>
-        </p>
-      </div>
-  
-      <!-- Разработчики -->
-      <div class="footer-section">
-        <h3 data-translate="developers">Разработчики сайта</h3>
-        <p>
-          <span class="icon">👨‍💻</span>
-          <strong data-translate="developer_name">Жобаны жасаған:</strong><br />
-          <span data-translate="developer_info">Колледж студенттері мен оқытушылары</span>
-        </p>
-        
-        <a href="https://t.me/wikipediasoso_bot" class="dev-button" data-translate="contact_developer">Связаться с разработчиком</a>
-      </div>
-    </div>
-  </footer>
-  
+
 </html>
